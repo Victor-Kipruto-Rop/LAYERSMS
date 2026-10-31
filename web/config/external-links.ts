@@ -18,8 +18,8 @@ export function smsPermissionGuideUrl(source: string): string {
 
 export const ExternalLinks = {
   patreon: 'https://patreon.com/vernu',
-  github: 'https://github.com/textbee/textbee',
-  discord: 'https://textbee.dev/discord',
+  github: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS',
+  discord: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions',
   polar: 'https://donate.textbee.dev',
   twitter: 'https://x.com/textbeedotdev',
   linkedin: 'https://www.linkedin.com/company/textbeedotdev',
