@@ -8,7 +8,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.vernu.sms.ApiManagerKt
 import com.vernu.sms.AppConstants
 import com.vernu.sms.BuildConfig
-import com.vernu.sms.TextbeeUtils
+import com.vernu.sms.LayerSmsUtils
 import com.vernu.sms.dtos.RegisterDeviceInputDTO
 import com.vernu.sms.dtos.SimInfoCollectionDTO
 import com.vernu.sms.helpers.HeartbeatManager
@@ -106,12 +106,12 @@ class OnboardingViewModel : ViewModel() {
                             errorMessage = RegistrationChecks.pushTokenFailureMessage(context)
                         )
                     }
-                    TextbeeUtils.logException(e, "Onboarding push token request failed")
+                    LayerSmsUtils.logException(e, "Onboarding push token request failed")
                     return@launch
                 }
                 val collectedSimInfo = SimInfoCollectionDTO().apply {
                     lastUpdated = System.currentTimeMillis()
-                    sims = TextbeeUtils.collectSimInfo(context)
+                    sims = LayerSmsUtils.collectSimInfo(context)
                 }
                 val input = RegisterDeviceInputDTO().apply {
                     this.fcmToken = fcmToken
@@ -197,7 +197,7 @@ class OnboardingViewModel : ViewModel() {
                     else -> "Something went wrong. Please try again."
                 }
                 _state.update { it.copy(isLoading = false, errorMessage = message) }
-                TextbeeUtils.logException(e, "Onboarding device registration failed")
+                LayerSmsUtils.logException(e, "Onboarding device registration failed")
             }
         }
     }
