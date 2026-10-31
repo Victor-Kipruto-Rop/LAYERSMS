@@ -14,7 +14,7 @@ import com.vernu.sms.AppConstants
 // Shared help for a missing SMS permission, including Android 15 restricted settings
 object SmsPermissionHelp {
     const val GUIDE_URL =
-        "https://textbee.dev/blog/android-15-send-sms-permission-guide?utm_source=android&utm_medium=app&utm_campaign=sms_permission"
+        "https://docs.layersms.com/android/sms-permissions?utm_source=android&utm_medium=app&utm_campaign=sms_permission"
 
     private const val MENU_STEP =
         "Tap the menu (⋮) in the top right and choose Allow restricted settings. Confirm with your PIN or fingerprint. If the menu is not there, skip this step."
@@ -25,7 +25,7 @@ object SmsPermissionHelp {
         "Tap Open app settings below.",
         MENU_STEP.takeIf { restricted },
         "Tap Permissions, then SMS, then Allow.",
-        "Come back to textbee.",
+        "Come back to Layer SMS.",
     )
 
     fun intro(restricted: Boolean = needsRestrictedSettings): String =
