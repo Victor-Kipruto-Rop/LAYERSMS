@@ -43,7 +43,7 @@ object PermissionFailureNotifier {
             // SMS allowed means the send targeted a SIM and the Phone permission is the one missing
             val phoneOnly = TextbeeUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS)
             val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.layer_sms_notification_icon)
                 .setContentTitle(if (phoneOnly) "textbee cannot send from the chosen SIM" else "textbee cannot send SMS")
                 .setContentText(
                     if (phoneOnly) "Android has not allowed the Phone permission. Tap to fix it."
