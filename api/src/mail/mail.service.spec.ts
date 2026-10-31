@@ -336,9 +336,9 @@ describe('MailService.sendTemplated', () => {
     const mail = mailerService.sendMail.mock.calls[0][0]
     expect(mail).toMatchObject({
       to: 'ada@example.com',
-      from: 'textbee <notifications@Layer SMS>',
+      from: 'Layer SMS <notifications@layersms.com>',
       replyTo: 'support@Layer SMS',
-      subject: 'Reset your textbee password',
+      subject: 'Reset your Layer SMS password',
       headers: { 'X-SES-MESSAGE-TAGS': 'template=T2' },
     })
     expect(mail.headers['X-SES-CONFIGURATION-SET']).toBeUndefined()
