@@ -10,14 +10,14 @@ describe('appVersionMetadata', () => {
         appVersionName: '2.7.0',
         appVersionInfo: { versionCode: 18, versionName: '2.8.0' },
       },
-      'textbee-android/2.8.0',
+      'layersms-android/2.8.0',
       now,
     )
 
     expect(metadata).toEqual({
       appVersionCode: 18,
       appVersionName: '2.8.0',
-      client: 'textbee-android/2.8.0',
+      client: 'layersms-android/2.8.0',
       appVersionAt: now,
     })
   })
