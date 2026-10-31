@@ -138,7 +138,7 @@ export const SimIdInput = forwardRef<HTMLInputElement, SimIdInputProps>(
                 <p className='text-xs text-warning'>
                   No SIM with subscription ID {value} in the phone&apos;s last
                   report. If the phone has no SIM with this ID, it sends from
-                  the SIM set as default in the textbee app, or the
+                  the SIM set as default in the Layer SMS Gateway app, or the
                   phone&apos;s default SIM.
                 </p>
               )}
