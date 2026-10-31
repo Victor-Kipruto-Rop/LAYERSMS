@@ -17,9 +17,9 @@ const DEVICE_ROUTE =
 const ANDROID_CLIENTS = ['layersms-android', 'textbee-android']
 
 const CLIENT_FAMILIES: { label: string; match: RegExp }[] = [
-  { label: 'Layer SMS JS SDK', match: /^(?:layersms-js|textbee-js)\\b/ },
-  { label: 'Layer SMS Python SDK', match: /^(?:layersms-python|textbee-python)\\b/ },
-  { label: 'Layer SMS Android Gateway', match: /^(?:layersms-android|textbee-android)\\b/ },
+  { label: 'Layer SMS JS SDK', match: /^(?:layersms-js|textbee-js)\b/ },
+  { label: 'Layer SMS Python SDK', match: /^(?:layersms-python|textbee-python)\b/ },
+  { label: 'Layer SMS Android Gateway', match: /^(?:layersms-android|textbee-android)\b/ },
 ]
 
 const USER_AGENT_FAMILIES: { label: string; match: RegExp }[] = [
