@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.vernu.sms.ApiManagerKt
 import com.vernu.sms.AppConstants
 import com.vernu.sms.BuildConfig
-import com.vernu.sms.TextbeeUtils
+import com.vernu.sms.LayerSmsUtils
 import com.vernu.sms.dtos.RegisterDeviceInputDTO
 import com.vernu.sms.helpers.HeartbeatManager
 import com.vernu.sms.helpers.SharedPreferenceHelper
@@ -78,7 +78,7 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
         )
 
         val sims = try {
-            TextbeeUtils.getAvailableSimSlots(context).map { info ->
+            LayerSmsUtils.getAvailableSimSlots(context).map { info ->
                 SimOption(
                     subscriptionId = info.subscriptionId,
                     displayName = "${info.carrierName} (SIM ${info.simSlotIndex + 1})"
@@ -121,10 +121,10 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
                     )
                     _state.update { it.copy(isGatewayEnabled = enabled, healthIssueCount = DeviceHealthViewModel.issueCount(context)) }
                     if (enabled) {
-                        TextbeeUtils.startStickyNotificationService(context)
+                        LayerSmsUtils.startStickyNotificationService(context)
                         HeartbeatManager.scheduleHeartbeat(context)
                     } else {
-                        TextbeeUtils.stopStickyNotificationService(context)
+                        LayerSmsUtils.stopStickyNotificationService(context)
                         HeartbeatManager.cancelHeartbeat(context)
                     }
                 } else {
@@ -132,7 +132,7 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
                 }
             } catch (e: Exception) {
                 _state.update { it.copy(snackbarMessage = "Network error. Try again.") }
-                TextbeeUtils.logException(e, "Gateway toggle from settings failed")
+                LayerSmsUtils.logException(e, "Gateway toggle from settings failed")
             }
         }
     }
@@ -150,10 +150,10 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
             context, AppConstants.SHARED_PREFS_STICKY_NOTIFICATION_ENABLED_KEY, enabled
         )
         try {
-            if (enabled) TextbeeUtils.startStickyNotificationService(context)
-            else TextbeeUtils.stopStickyNotificationService(context)
+            if (enabled) LayerSmsUtils.startStickyNotificationService(context)
+            else LayerSmsUtils.stopStickyNotificationService(context)
         } catch (e: Exception) {
-            TextbeeUtils.logException(e, "Sticky notification toggle failed")
+            LayerSmsUtils.logException(e, "Sticky notification toggle failed")
             _state.update { it.copy(snackbarMessage = "Could not start notification service") }
         }
         _state.update { it.copy(isStickyNotificationEnabled = enabled, healthIssueCount = DeviceHealthViewModel.issueCount(context)) }
@@ -196,7 +196,7 @@ class SettingsViewModel(app: Application) : AndroidViewModel(app) {
                 }
             } catch (e: Exception) {
                 _state.update { it.copy(snackbarMessage = "Network error. Try again.") }
-                TextbeeUtils.logException(e, "Save device name failed")
+                LayerSmsUtils.logException(e, "Save device name failed")
             } finally {
                 _state.update { it.copy(isSavingDeviceName = false) }
             }
