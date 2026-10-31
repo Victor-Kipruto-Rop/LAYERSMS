@@ -32,7 +32,7 @@ describe('classifyChannel', () => {
       classifyChannel({
         hasBearer: false,
         path: '/api/v1/gateway/devices/652f1a/messages',
-        sdkClient: 'textbee-android/2.9.0',
+        sdkClient: 'layersms-android/2.10.0',
       }),
     ).toBe('device')
   })
@@ -51,7 +51,7 @@ describe('classifyChannel', () => {
       classifyChannel({
         hasBearer: true,
         path: '/api/v1/gateway/devices',
-        sdkClient: 'textbee-android/2.9.0',
+        sdkClient: 'layersms-android/2.10.0',
       }),
     ).toBe('web')
   })
@@ -65,19 +65,19 @@ describe('classifyClient', () => {
   it('prefers the client a caller declares', () => {
     expect(
       classifyClient({
-        sdkClient: 'textbee-js/1.4.0',
+        sdkClient: 'layersms-js/1.0.0',
         userAgent: 'axios/1.7.2',
       }),
-    ).toBe('textbee-js')
-    expect(classifyClient({ sdkClient: 'textbee-android/2.9.0' })).toBe(
-      'textbee-android',
+    ).toBe('Layer SMS JS SDK')
+    expect(classifyClient({ sdkClient: 'layersms-android/2.10.0' })).toBe(
+      'Layer SMS Android Gateway',
     )
     expect(
       classifyClient({
-        sdkClient: 'textbee-python/0.1.0',
-        userAgent: 'textbee-python/0.1.0',
+        sdkClient: 'layersms-python/1.0.0',
+        userAgent: 'layersms-python/1.0.0',
       }),
-    ).toBe('textbee-python')
+    ).toBe('Layer SMS Python SDK')
   })
 
   it.each([
