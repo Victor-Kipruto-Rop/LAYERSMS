@@ -20,18 +20,18 @@ describe('upgrade links', () => {
   ])('use yearly when the setting is %s', (_label, value) => {
     if (value !== undefined) process.env.DEFAULT_BILLING_INTERVAL = value
 
-    expect(upgradeUrl()).toBe('http://localhost:3000/checkout/pro?billingInterval=yearly&from=email')
+    expect(upgradeUrl()).toBe('https://app.layersms.com/checkout/pro?billingInterval=yearly&from=email')
     expect(scaleUpgradeUrl()).toBe(
-      'http://localhost:3000/checkout/scale?billingInterval=yearly&from=email',
+      'https://app.layersms.com/checkout/scale?billingInterval=yearly&from=email',
     )
   })
 
   it('use monthly when the setting is exactly monthly', () => {
     process.env.DEFAULT_BILLING_INTERVAL = 'monthly'
 
-    expect(upgradeUrl()).toBe('http://localhost:3000/checkout/pro?billingInterval=monthly&from=email')
+    expect(upgradeUrl()).toBe('https://app.layersms.com/checkout/pro?billingInterval=monthly&from=email')
     expect(scaleUpgradeUrl()).toBe(
-      'http://localhost:3000/checkout/scale?billingInterval=monthly&from=email',
+      'https://app.layersms.com/checkout/scale?billingInterval=monthly&from=email',
     )
   })
 
@@ -57,17 +57,17 @@ describe('email source on app links', () => {
 
   it('tags upgrade links with the template key after the interval', () => {
     expect(upgradeUrl('U2')).toBe(
-      'http://localhost:3000/checkout/pro?billingInterval=yearly&from=email&ref=U2',
+      'https://app.layersms.com/checkout/pro?billingInterval=yearly&from=email&ref=U2',
     )
     expect(scaleUpgradeUrl('U2_paid')).toBe(
-      'http://localhost:3000/checkout/scale?billingInterval=yearly&from=email&ref=U2_paid',
+      'https://app.layersms.com/checkout/scale?billingInterval=yearly&from=email&ref=U2_paid',
     )
   })
 
   it('tags the billing page link for emails only', () => {
     expect(billingEmailUrl('U1_paid')).toBe(
-      'http://localhost:3000/dashboard/account/billing?from=email&ref=U1_paid',
+      'https://app.layersms.com/dashboard/account/billing?from=email&ref=U1_paid',
     )
-    expect(billingUrl()).toBe('http://localhost:3000/dashboard/account/billing')
+    expect(billingUrl()).toBe('https://app.layersms.com/dashboard/account/billing')
   })
 })
