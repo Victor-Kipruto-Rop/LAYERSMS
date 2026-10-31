@@ -258,7 +258,7 @@ fun SettingsScreen(
                 icon = Icons.Default.SupportAgent,
                 title = "Get Support",
                 onClick = {
-                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://app.layersms.com/dashboard/account/get-support")))
+                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://support.layersms.com")))
                 },
                 trailing = {
                     Icon(Icons.Default.OpenInBrowser, contentDescription = null,
@@ -306,7 +306,7 @@ fun SettingsScreen(
                 icon = Icons.Default.Gavel,
                 title = "Terms of Service",
                 onClick = {
-                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://layersms.com/terms-of-service")))
+                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://layersms.com/terms")))
                 },
                 trailing = {
                     Icon(Icons.Default.OpenInBrowser, contentDescription = null,
@@ -318,7 +318,7 @@ fun SettingsScreen(
                 icon = Icons.Default.Policy,
                 title = "Privacy Policy",
                 onClick = {
-                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://layersms.com/privacy-policy")))
+                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://layersms.com/privacy")))
                 },
                 trailing = {
                     Icon(Icons.Default.OpenInBrowser, contentDescription = null,
