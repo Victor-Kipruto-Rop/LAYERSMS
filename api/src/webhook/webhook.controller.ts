@@ -192,7 +192,7 @@ export class WebhookController {
   @ApiOperation({
     summary: 'Create a webhook subscription',
     description:
-      'textbee POSTs the events you pick to your delivery URL and signs each request with your signing secret, sent as the X-Signature header. Failed deliveries are retried up to 10 times, and a subscription that keeps failing is paused.',
+      'Layer SMS POSTs the events you pick to your delivery URL and signs each request with your signing secret, sent as the X-Signature header. Failed deliveries are retried up to 10 times, and a subscription that keeps failing is paused.',
   })
   @ApiResponse({
     status: 201,
