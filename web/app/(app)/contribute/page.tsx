@@ -60,7 +60,7 @@ export default function ContributePage() {
           <CardHeader>
             <CardTitle className='flex items-center gap-2'>
               <CircleDollarSign className='h-5 w-5' />
-              Financial Support
+              Support and billing
             </CardTitle>
             <CardDescription>
               Help sustain Layer SMS development through financial
@@ -81,7 +81,7 @@ export default function ContributePage() {
                     <Button className='w-full' asChild>
                       <Link href={ExternalLinks.patreon} target='_blank'>
                         <Heart className='mr-2 h-4 w-4' />
-                        Support on Patreon
+                        Contact support
                       </Link>
                     </Button>
                   </CardContent>
@@ -99,7 +99,7 @@ export default function ContributePage() {
                     <Button variant='outline' className='w-full' asChild>
                       <Link href={ExternalLinks.polar} target='_blank'>
                         <Heart className='mr-2 h-4 w-4' />
-                        Donate on Polar
+                        Open billing portal
                       </Link>
                     </Button>
                   </CardContent>
