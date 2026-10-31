@@ -31,7 +31,7 @@ export const API_TAGS: ReadonlyArray<{ name: string; description: string }> = [
   {
     name: 'notifications',
     description:
-      'The messages the textbee dashboard shows an account. Used by the dashboard only.',
+      'The messages the Layer SMS dashboard shows an account. Used by the dashboard only.',
   },
 ]
 
