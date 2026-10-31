@@ -253,7 +253,7 @@ export default function ApiGuide() {
           </Button>
           <Button asChild variant='outline' size='sm'>
             <a
-              href='https://api.textbee.dev/'
+              href='https://api.layersms.com/'
               target='_blank'
               rel='noopener noreferrer'
             >
