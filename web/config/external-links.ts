@@ -17,10 +17,10 @@ export function smsPermissionGuideUrl(source: string): string {
 }
 
 export const ExternalLinks = {
-  patreon: 'https://layersms.com/community',
+  patreon: 'https://support.layersms.com',
   github: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS',
-  discord: 'https://layersms.com/community',
+  discord: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions',
   polar: 'https://app.layersms.com/dashboard/account/billing',
-  twitter: 'https://layersms.com/community',
-  linkedin: 'https://layersms.com/about',
+  twitter: 'https://x.com/intent/post?text=Discover%20Layer%20SMS%20at%20https%3A%2F%2Flayersms.com',
+  linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Flayersms.com',
 }
