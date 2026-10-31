@@ -1,7 +1,7 @@
 services:
   # MongoDB service
-  textbee-db:
-    container_name: textbee-db
+  layersms-db:
+    container_name: layersms-db
     image: mongo:latest
     restart: always
     environment:
@@ -14,7 +14,7 @@ services:
     ports:
       - "${MONGO_PORT:-27018}:27017"
     networks:
-      - textbee-network
+      - layersms-network
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 30s
@@ -32,17 +32,17 @@ services:
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ROOT_USER:-adminUser}
       - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ROOT_PASS:-adminPassword}
-      - ME_CONFIG_MONGODB_SERVER=textbee-db
+      - ME_CONFIG_MONGODB_SERVER=layersms-db
     depends_on:
-      textbee-db:
+      layersms-db:
         condition: service_healthy
     networks:
-      - textbee-network
+      - layersms-network
 
   # NestJS API
-  textbee-api:
-    container_name: textbee-api
-    # image: ghcr.io/textbee/textbee/api:latest
+  layersms-api:
+    container_name: layersms-api
+    # image: ghcr.io/victor-kipruto-rop/layersms/api:latest
     build:
       context: ./api
       dockerfile: Dockerfile
@@ -53,18 +53,18 @@ services:
       - ./api/.env
     environment:
       - PORT=${PORT:-3001}
-      - REDIS_URL=${REDIS_URL:-redis://textbee-redis:6379}
+      - REDIS_URL=${REDIS_URL:-redis://layersms-redis:6379}
 
     depends_on:
-      textbee-db:
+      layersms-db:
         condition: service_healthy
     networks:
-      - textbee-network
+      - layersms-network
 
   # Next.js Web
-  textbee-web:
-    container_name: textbee-web
-    # image: ghcr.io/textbee/textbee/web:latest
+  layersms-web:
+    container_name: layersms-web
+    # image: ghcr.io/victor-kipruto-rop/layersms/web:latest
     build:
       context: ./web
       dockerfile: Dockerfile
@@ -78,13 +78,13 @@ services:
       - NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL:-http://localhost:3001/api/v1}
 
     depends_on:
-      - textbee-api
+      - layersms-api
     networks:
-      - textbee-network
+      - layersms-network
 
   # Redis (if SMS queue is needed)
-  textbee-redis:
-    container_name: textbee-redis
+  layersms-redis:
+    container_name: layersms-redis
     image: redis:alpine
     restart: always
     ports:
@@ -92,7 +92,7 @@ services:
     volumes:
       - redis_data:/data
     networks:
-      - textbee-network
+      - layersms-network
     command: redis-server --appendonly yes
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -102,7 +102,7 @@ services:
       start_period: 20s
 
 networks:
-  textbee-network:
+  layersms-network:
     driver: bridge
 
 volumes:
