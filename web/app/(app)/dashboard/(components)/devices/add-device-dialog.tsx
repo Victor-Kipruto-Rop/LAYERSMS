@@ -53,7 +53,7 @@ const AddDeviceDialog = forwardRef<AddDeviceHandle>(function AddDeviceDialog(
           </DialogHeader>
           <ol className='list-decimal space-y-3 pl-5 text-left text-sm text-muted-foreground'>
             <li>
-              Download textbee app from{' '}
+              Download Layer SMS Gateway from{' '}
               <a
                 href={Routes.downloadAndroidApp}
                 target='_blank'
