@@ -75,7 +75,7 @@ export class SupportService {
           category: sanitizedDto.category,
           message: sanitizedDto.message,
           appLogoUrl:
-            process.env.APP_LOGO_URL || 'https://raw.githubusercontent.com/Victor-Kipruto-Rop/LAYERSMS/main/web/public/layer-sms-mark.svg',
+            process.env.APP_LOGO_URL || 'https://layersms.com/layer-sms-mark.svg',
           currentYear: new Date().getFullYear(),
         },
       }, {
@@ -141,7 +141,7 @@ export class SupportService {
 
       // Send confirmation email
       await this.mailService.sendEmailFromTemplate({
-        from: 'support@textbee.dev',
+        from: process.env.SUPPORT_EMAIL || 'Layer SMS Support <support@layersms.com>',
         to: user.email,
         cc: process.env.ADMIN_EMAIL,
         subject: `Account Deletion Request: ${savedMessage._id}`,
