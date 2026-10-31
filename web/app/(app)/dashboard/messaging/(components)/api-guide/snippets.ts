@@ -4,7 +4,7 @@
 // is runnable after pasting one API key. The previous guide always printed
 // YOUR_DEVICE_ID, which meant nothing on the page could be run as-is.
 
-export const API_BASE_URL = 'https://api.textbee.dev/api/v1'
+export const API_BASE_URL = 'https://api.layersms.com/api/v1'
 
 export type LanguageId =
   | 'curl'
@@ -97,7 +97,7 @@ export function buildEndpoints(deviceId?: string): Endpoint[] {
   -H "Content-Type: application/json" \\
   -d '{${device.curl}
     "recipients": ["+14155550101"],
-    "message": "Hello from textbee"
+    "message": "Hello from Layer SMS"
   }'`,
         node: `const res = await fetch(
   '${API_BASE_URL}/gateway/send-sms',
@@ -109,7 +109,7 @@ export function buildEndpoints(deviceId?: string): Endpoint[] {
     },
     body: JSON.stringify({${device.node}
       recipients: ['+14155550101'],
-      message: 'Hello from textbee',
+      message: 'Hello from Layer SMS',
     }),
   }
 )
@@ -122,7 +122,7 @@ res = requests.post(
     headers={'x-api-key': os.environ['TEXTBEE_API_KEY']},
     json={${device.python}
         'recipients': ['+14155550101'],
-        'message': 'Hello from textbee',
+        'message': 'Hello from Layer SMS',
     },
 )
 
@@ -139,7 +139,7 @@ curl_setopt_array($ch, [
     ],
     CURLOPT_POSTFIELDS => json_encode([${device.php}
         'recipients' => ['+14155550101'],
-        'message' => 'Hello from textbee',
+        'message' => 'Hello from Layer SMS',
     ]),
 ]);
 
@@ -155,7 +155,7 @@ import (
 )
 
 func main() {
-	body := []byte(\`{${device.go}"recipients":["+14155550101"],"message":"Hello from textbee"}\`)
+	body := []byte(\`{${device.go}"recipients":["+14155550101"],"message":"Hello from Layer SMS"}\`)
 
 	req, _ := http.NewRequest("POST",
 		"${API_BASE_URL}/gateway/send-sms",
@@ -176,7 +176,7 @@ func main() {
 
 const result = await textbee.sendSms({${device.sdk}
   recipients: ['+14155550101'],
-  message: 'Hello from textbee',
+  message: 'Hello from Layer SMS',
 })
 
 console.log(result)`,
@@ -184,7 +184,7 @@ console.log(result)`,
 
 result = textbee.send_sms(${device.pythonSdk}
     recipients=['+14155550101'],
-    message='Hello from textbee',
+    message='Hello from Layer SMS',
 )
 
 print(result)`,
@@ -524,7 +524,7 @@ textbee.get_messages(sms_batch_id='YOUR_BATCH_ID', status='failed')`,
     {
       "_id": "665f1c2a9b1e4a0012ab34cd",
       "recipient": "+14155550101",
-      "message": "Hello from textbee",
+      "message": "Hello from Layer SMS",
       "direction": "sent",
       "status": "delivered",
       "requestedAt": "2026-07-18T09:12:00.000Z",
