@@ -150,7 +150,7 @@ export const SimIdInput = forwardRef<HTMLInputElement, SimIdInputProps>(
                   {sims.length > 0 && age
                     ? `The IDs above were reported ${age} and can change after a SIM swap,`
                     : 'Subscription IDs can change after a SIM swap,'}{' '}
-                  so confirm the ID in the SIM Cards section of the textbee
+                  so confirm the ID in the SIM Cards section of the Layer SMS Gateway
                   app.
                 </span>
               </p>
