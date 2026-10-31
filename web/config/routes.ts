@@ -1,5 +1,4 @@
 const SITE = 'https://layersms.com'
-const APP = 'https://app.layersms.com'
 const DOCS = 'https://docs.layersms.com'
 
 export const Routes = {
