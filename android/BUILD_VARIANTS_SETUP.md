@@ -1,10 +1,10 @@
 # Android Build Variants Setup (Dev vs Prod)
 
-This document explains how to use the dev and prod build variants for the SMS Gateway Android app.
+This document explains how to use the dev and prod build variants for the Layer SMS Android app.
 
 ## Overview
 
-The app now supports two build variants:
+The Layer SMS Android gateway supports two build variants:
 - **Dev**: For development and testing
 - **Prod**: For production releases
 
@@ -13,7 +13,7 @@ The app now supports two build variants:
 | Feature | Dev | Prod |
 |---------|-----|------|
 | Package Name | `com.vernu.sms.dev` | `com.vernu.sms` |
-| App Name | "SMS Gateway (Dev)" | "SMS Gateway" |
+| App Name | "Layer SMS Dev" | "SMS Gateway" |
 | API Base URL | `https://api-dev.textbee.dev/api/v1/` | `https://api.textbee.dev/api/v1/` |
 | Firebase Config | `app/src/dev/google-services.json` | `app/src/prod/google-services.json` |
 | Version Suffix | `-dev` appended | No suffix |
@@ -34,7 +34,7 @@ The app now supports two build variants:
 
 ### 2. API Configuration
 
-The API base URLs are now configured via build variants:
+The existing API origins are retained for backward compatibility until you configure your own Layer SMS API deployment:
 - **Dev**: `https://api-dev.textbee.dev/api/v1/`
 - **Prod**: `https://api.textbee.dev/api/v1/`
 
