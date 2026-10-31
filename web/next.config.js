@@ -6,6 +6,21 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/community',
+        destination: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions',
+        permanent: false,
+      },
+      {
+        source: '/download',
+        destination: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/releases',
+        permanent: false,
+      },
+      {
+        source: '/support',
+        destination: 'https://support.layersms.com',
+        permanent: false,
+      },
+      {
         source: '/android',
         destination: 'https://layersms.com/download',
         permanent: false,
