@@ -44,7 +44,7 @@ object PermissionFailureNotifier {
             val phoneOnly = LayerSmsUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS)
             val builder = NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.layer_sms_notification_icon)
-                .setContentTitle(if (phoneOnly) "textbee cannot send from the chosen SIM" else "textbee cannot send SMS")
+                .setContentTitle(if (phoneOnly) "Layer SMS Gateway cannot send from the chosen SIM" else "Layer SMS Gateway cannot send SMS")
                 .setContentText(
                     if (phoneOnly) "Android has not allowed the Phone permission. Tap to fix it."
                     else "Android has not allowed the SMS permission. Tap to fix it."
