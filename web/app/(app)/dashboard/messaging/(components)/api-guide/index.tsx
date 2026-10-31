@@ -197,7 +197,16 @@ export default function ApiGuide() {
         </div>
       )}
 
-      {(language === 'sdk' || language === 'python-sdk') && (\n        <Alert>\n          <AlertTitle>Legacy SDK compatibility</AlertTitle>\n          <AlertDescription>\n            These SDKs are still published under the original TextBee package names. They are shown for existing integrations and have not yet been republished as Layer SMS packages. For new integrations, use the REST API examples until official Layer SMS SDK packages are released.\n          </AlertDescription>\n        </Alert>\n      )}\n\n      {/* Endpoints */}
+      {(language === 'sdk' || language === 'python-sdk') && (
+        <Alert>
+          <AlertTitle>Legacy SDK compatibility</AlertTitle>
+          <AlertDescription>
+            These SDKs are still published under the original TextBee package names. They are shown for existing integrations and have not yet been republished as Layer SMS packages. For new integrations, use the REST API examples until official Layer SMS SDK packages are released.
+          </AlertDescription>
+        </Alert>
+      )}
+
+      {/* Endpoints */}
       <div className='space-y-8'>
         {endpoints.map((endpoint) => (
           <section
