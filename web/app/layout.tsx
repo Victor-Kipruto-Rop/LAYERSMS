@@ -19,9 +19,12 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'textbee.dev - sms gateway - dashboard',
+  title: { default: 'Layer SMS — Messaging infrastructure', template: '%s | Layer SMS' },
+  description: 'Layer SMS connects applications to reliable SMS delivery through an Android gateway, REST API and webhooks.',
+  applicationName: 'Layer SMS',
+  icons: { icon: '/layer-sms-mark.svg', shortcut: '/layer-sms-mark.svg' },
 
-  metadataBase: new URL('https://textbee.dev'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
 }
 
 export default async function RootLayout({ children }: PropsWithChildren) {
