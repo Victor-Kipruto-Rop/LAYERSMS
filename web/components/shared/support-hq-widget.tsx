@@ -14,7 +14,7 @@ export function openSupportChat() {
   // @ts-ignore
   const widget = window.SupportHQWidget
   if (widget) widget.open()
-  else window.location.href = 'https://layersms.com/support'
+  else window.location.href = 'https://support.layersms.com'
 }
 
 export default function SupportHQWidget() {
