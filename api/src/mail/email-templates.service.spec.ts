@@ -24,7 +24,7 @@ describe('EmailTemplatesService', () => {
 
     expect(r.enabled).toBe(true)
     expect(r.version).toBe(0)
-    expect(r.document.subject).toBe('Your textbee password was changed')
+    expect(r.document.subject).toBe('Your Layer SMS password was changed')
     expect(r.document.text).toContain('Hi Ada,')
     expect(r.document.text).toContain('This is a notice about your textbee account.')
   })
