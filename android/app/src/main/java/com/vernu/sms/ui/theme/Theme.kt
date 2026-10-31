@@ -17,18 +17,18 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val LightColorScheme = lightColorScheme(
-    primary = Emerald700,
-    onPrimary = Color.White,
+    primary = Emerald,
+    onPrimary = Forest,
     primaryContainer = EmeraldLight,
     onPrimaryContainer = ForestSecondary,
     secondary = Emerald,
     onSecondary = Color.White,
     secondaryContainer = EmeraldLight,
     onSecondaryContainer = ForestSecondary,
-    background = Gray50,
-    onBackground = Gray900,
+    background = Color(0xFFF2F5F3),
+    onBackground = Forest,
     surface = Color.White,
-    onSurface = Gray900,
+    onSurface = Forest,
     surfaceVariant = Gray100,
     onSurfaceVariant = Gray600,
     outline = Gray200,
@@ -37,7 +37,7 @@ private val LightColorScheme = lightColorScheme(
 
 private val DarkColorScheme = darkColorScheme(
     primary = Emerald,
-    onPrimary = Color.White,
+    onPrimary = Forest,
     primaryContainer = ForestSecondary,
     onPrimaryContainer = EmeraldLight,
     secondary = Emerald700,
