@@ -24,7 +24,7 @@ services:
 
   # MongoDB Express (optional admin UI)
   mongo-express:
-    container_name: textbee-mongo-express
+    container_name: layersms-mongo-express
     image: mongo-express:latest
     restart: always
     ports:
