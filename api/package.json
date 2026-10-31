@@ -2,9 +2,9 @@
   "name": "@layersms/api",
   "version": "0.0.1",
   "description": "Layer SMS messaging gateway API",
-  "author": "Layer SMS",
+  "author": "Victor Kipruto Rop",
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "packageManager": "pnpm@9.14.2",
   "scripts": {
     "prebuild": "rimraf dist",
