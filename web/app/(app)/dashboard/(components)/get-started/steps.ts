@@ -50,7 +50,7 @@ export const STEPS: StepDef[] = [
   {
     id: 'download_app',
     label: 'Download the Android app',
-    description: 'Install textbee on the Android phone that will send your SMS.',
+    description: 'Install Layer SMS Gateway on the Android phone that will send your SMS.',
     doneDescription: 'Installed. Download it again if you are setting up another phone.',
     optional: true,
     timeEstimate: '~1 min',
