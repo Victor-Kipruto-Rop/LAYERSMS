@@ -17,12 +17,12 @@
     <!-- Theme without action bar for MainActivity -->
     <style name="Theme.SMSGateway.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#C4620A</item>
-        <item name="colorPrimaryVariant">#A04405</item>
+        <item name="colorPrimary">@color/layer_forest</item>
+        <item name="colorPrimaryVariant">@color/layer_forest</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#B45309</item>
-        <item name="colorSecondaryVariant">#92400E</item>
+        <item name="colorSecondary">@color/layer_mint</item>
+        <item name="colorSecondaryVariant">@color/layer_forest_secondary</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
