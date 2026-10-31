@@ -30,6 +30,19 @@ The source-controlled mark is `web/public/layer-sms-mark.svg`. It uses three sta
 
 Avoid claims of carrier-direct access, guaranteed delivery, or unsupported channel coverage. The current implementation sends and receives SMS through paired Android devices and their SIMs.
 
+## Domain system
+
+- Public website: `https://layersms.com`
+- Web console: `https://app.layersms.com`
+- Production API: `https://api.layersms.com`
+- Development API: `https://api-dev.layersms.com`
+- Developer documentation: `https://docs.layersms.com`
+- Service status: `https://status.layersms.com`
+- Support: `https://support.layersms.com`
+- Email: `support@layersms.com` and `notifications@layersms.com`
+
+See [DOMAIN.md](DOMAIN.md) for DNS, TLS, environment variables, OAuth, Firebase and cutover requirements. Hostnames are target configuration and must be provisioned with the relevant hosting providers before launch.
+
 ## Compatibility rule
 
 A visual rebrand must not silently change API routes, Android application IDs, SDK package names, production hostnames, credentials, or signing keys. Coordinate those changes as a versioned migration with a documented compatibility window.
