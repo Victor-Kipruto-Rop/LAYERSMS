@@ -71,7 +71,7 @@ export default function DashboardLayout({
           <p className='text-xs text-muted-foreground'>
             Need help?{' '}
             <a
-              href='https://github.com/Victor-Kipruto-Rop/LAYERSMS#run-locally-with-docker'
+              href='https://docs.layersms.com/quickstart'
               target='_blank'
               rel='noreferrer'
               className='font-medium text-primary hover:underline'
