@@ -660,7 +660,7 @@ export class GatewayService {
       ? {
           code: 'SMS_PERMISSION_MISSING',
           message:
-            'The textbee app on this phone last reported the SMS permission as off. The message fails if it is still off.',
+            'The Layer SMS Gateway app on this phone last reported the SMS permission as off. The message fails if it is still off.',
         }
       : undefined
 
