@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+<title id="title">Layer SMS</title>
+<rect width="64" height="64" rx="16" fill="#0B2E24"/>
+<path d="M14 21.5 32 12l18 9.5-18 9.4-18-9.4Z" fill="#2ECC87"/>
+<path d="m14 31.5 18 9.4 18-9.4" fill="none" stroke="#79E5B5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="m14 41.5 18 9.4 18-9.4" fill="none" stroke="#2ECC87" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
