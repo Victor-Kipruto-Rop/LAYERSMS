@@ -59,7 +59,7 @@ export function classifyChannel({
   sdkClient?: string
 }): AccessChannel {
   if (hasBearer) return 'web'
-  if (sdkClient?.toLowerCase().startsWith(ANDROID_CLIENT)) return 'device'
+  if (ANDROID_CLIENTS.some((client) => sdkClient?.toLowerCase().startsWith(client))) return 'device'
   if (DEVICE_ROUTE.test(requestPath(path))) return 'device'
   return 'api'
 }
