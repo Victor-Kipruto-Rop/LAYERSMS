@@ -9,9 +9,8 @@
  * v4 theme colors so utilities like bg-background, text-muted-foreground,
  * border-border, bg-primary and the brand-* ramp keep working.
  *
- * Warm stone neutrals with the brand orange accent (#EA580C, AA-tuned per
- * theme). Surfaces nest background > shell (card frame, sidebar) > card
- * (inset content). Every text token clears 4.5:1 on the surfaces it sits on.
+ * Layer SMS Dark Botanical identity. Forest surfaces and emerald accents
+ * replace the inherited orange palette while preserving semantic tokens.
  */
 @theme inline {
   --color-background: hsl(var(--background));
@@ -54,18 +53,18 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
-  /* Warm modern orange ramp (Tailwind orange), 600 is the primary accent. */
-  --color-brand-50: #fff7ed;
-  --color-brand-100: #ffedd5;
-  --color-brand-200: #fed7aa;
-  --color-brand-300: #fdba74;
-  --color-brand-400: #fb923c;
-  --color-brand-500: #f97316;
-  --color-brand-600: #ea580c;
-  --color-brand-700: #c2410c;
-  --color-brand-800: #9a3412;
-  --color-brand-900: #7c2d12;
-  --color-brand-950: #431407;
+  /* Layer SMS emerald ramp */
+  --color-brand-50: #effdf6;
+  --color-brand-100: #d7f9e7;
+  --color-brand-200: #aff1d1;
+  --color-brand-300: #79e5b5;
+  --color-brand-400: #2ecc87;
+  --color-brand-500: #20b978;
+  --color-brand-600: #15945f;
+  --color-brand-700: #12764e;
+  --color-brand-800: #124a3b;
+  --color-brand-900: #0b2e24;
+  --color-brand-950: #061b15;
 
   --radius-xl: var(--radius);
   --radius-lg: calc(var(--radius) - 2px);
@@ -140,69 +139,67 @@
 
 :root {
   color-scheme: light;
-  --background: 40 23.1% 97.5%;
-  --foreground: 30 3.7% 10.6%;
-  --shell: 45 14.3% 94.5%;
+  --background: 150 20% 96%;
+  --foreground: 160 32% 12%;
+  --shell: 150 17% 92%;
   --card: 0 0% 100%;
-  --card-foreground: 30 3.7% 10.6%;
+  --card-foreground: 160 32% 12%;
   --popover: 0 0% 100%;
-  --popover-foreground: 30 3.7% 10.6%;
-  /* #EA580C family, darkened for AA text on light surfaces */
-  --primary: 21 90% 36%;
+  --popover-foreground: 160 32% 12%;
+  --primary: 153 63% 35%;
   --brand-foreground: 0 0% 100%;
-  --secondary: 45 9.5% 91.8%;
-  --secondary-foreground: 30 3.7% 10.6%;
-  --muted: 45 9.5% 91.8%;
-  --muted-foreground: 40 4.6% 38.2%;
-  --subtle-foreground: 40 4.2% 41.8%;
-  --accent: 45 9.5% 91.8%;
-  --accent-foreground: 30 3.7% 10.6%;
+  --secondary: 150 17% 91%;
+  --secondary-foreground: 160 32% 12%;
+  --muted: 150 17% 91%;
+  --muted-foreground: 160 9% 37%;
+  --subtle-foreground: 160 8% 42%;
+  --accent: 153 45% 91%;
+  --accent-foreground: 160 32% 12%;
   --destructive: 0 73.9% 45.1%;
   --destructive-foreground: 0 0% 100%;
-  --success: 162.9 93.5% 24.3%;
+  --success: 153 63% 32%;
   --warning: 40.3 100% 27.5%;
-  --border: 40 11.1% 89.4%;
-  --input: 40 11.1% 89.4%;
-  --ring: 21 90% 36%;
-  --chart-1: 21 90% 48%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 262 52% 55%;
+  --border: 150 12% 86%;
+  --input: 150 12% 86%;
+  --ring: 153 63% 35%;
+  --chart-1: 153 63% 35%;
+  --chart-2: 160 40% 28%;
+  --chart-3: 173 48% 42%;
+  --chart-4: 43 74% 56%;
+  --chart-5: 190 45% 45%;
   --radius: 0.75rem;
 }
 
 .dark {
   color-scheme: dark;
-  --background: 30 2.2% 18%;
-  --foreground: 0 0% 89.8%;
-  --shell: 30 2.8% 14.1%;
-  --card: 30 2.2% 18%;
-  --card-foreground: 0 0% 89.8%;
-  --popover: 30 1.8% 22%;
-  --popover-foreground: 0 0% 89.8%;
-  /* #EA580C family, lightened for AA text on dark surfaces */
-  --primary: 21 90% 62%;
-  --brand-foreground: 24 23.8% 8.2%;
-  --secondary: 30 1.8% 22%;
-  --secondary-foreground: 0 0% 89.8%;
-  --muted: 30 1.8% 22%;
-  --muted-foreground: 37.5 4.4% 64.3%;
-  --subtle-foreground: 34.3 3.4% 60.2%;
-  --accent: 30 1.8% 22%;
-  --accent-foreground: 0 0% 89.8%;
+  --background: 160 61% 11%;
+  --foreground: 150 20% 94%;
+  --shell: 160 45% 15%;
+  --card: 160 43% 14%;
+  --card-foreground: 150 20% 94%;
+  --popover: 160 42% 16%;
+  --popover-foreground: 150 20% 94%;
+  --primary: 153 63% 49%;
+  --brand-foreground: 160 61% 10%;
+  --secondary: 160 42% 19%;
+  --secondary-foreground: 150 20% 94%;
+  --muted: 160 38% 18%;
+  --muted-foreground: 150 12% 70%;
+  --subtle-foreground: 150 10% 65%;
+  --accent: 160 38% 20%;
+  --accent-foreground: 150 20% 94%;
   --destructive: 0 87% 75.5%;
-  --destructive-foreground: 24 23.8% 8.2%;
-  --success: 158.1 64.4% 51.6%;
-  --warning: 37.7 92.1% 50.2%;
-  --border: 30 3.1% 25.1%;
-  --input: 30 3.1% 25.1%;
-  --ring: 21 90% 62%;
-  --chart-1: 21 90% 52%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
+  --destructive-foreground: 160 61% 10%;
+  --success: 153 63% 49%;
+  --warning: 37.7 92.1% 58%;
+  --border: 160 28% 25%;
+  --input: 160 28% 25%;
+  --ring: 153 63% 49%;
+  --chart-1: 153 63% 49%;
+  --chart-2: 160 55% 38%;
+  --chart-3: 173 48% 52%;
+  --chart-4: 43 74% 62%;
+  --chart-5: 190 55% 58%;
 }
 
 /* Section and column labels: mono, uppercase, muted */
