@@ -1064,7 +1064,7 @@ export class WebhookService {
       deletedAt: null,
     })
 
-    const ctaUrlBase = process.env.FRONTEND_URL || 'https://app.textbee.dev'
+    const ctaUrlBase = process.env.FRONTEND_URL || 'https://app.layersms.com'
     const disabledInThisRun: {
       subscriptionId: string
       deliveryUrl: string
