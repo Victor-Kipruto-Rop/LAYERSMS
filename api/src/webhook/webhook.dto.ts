@@ -15,8 +15,8 @@ export class CreateWebhookDto {
     type: String,
     required: true,
     description:
-      'URL textbee POSTs events to. Must be http or https and publicly reachable. Private and loopback hosts are rejected.',
-    example: 'https://example.com/textbee/webhook',
+      'URL Layer SMS POSTs events to. Must be http or https and publicly reachable. Private and loopback hosts are rejected.',
+    example: 'https://example.com/layersms/webhook',
   })
   deliveryUrl: string
 
@@ -60,7 +60,7 @@ export class UpdateWebhookDto {
     required: false,
     description:
       'New delivery URL. Same rules as on create: http or https, no private or loopback hosts.',
-    example: 'https://example.com/textbee/webhook',
+    example: 'https://example.com/layersms/webhook',
   })
   deliveryUrl: string
 
