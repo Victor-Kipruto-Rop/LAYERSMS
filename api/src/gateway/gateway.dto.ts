@@ -148,7 +148,7 @@ export class RegisterDeviceInputDTO {
     type: String,
     required: false,
     description:
-      'Firebase Cloud Messaging token. textbee pushes send jobs to this token, so a stale value stops delivery.',
+      'Firebase Cloud Messaging token. Layer SMS pushes send jobs to this token, so a stale value stops delivery.',
   })
   fcmToken?: string
 
