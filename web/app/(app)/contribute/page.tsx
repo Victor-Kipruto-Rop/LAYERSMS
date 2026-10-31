@@ -174,7 +174,7 @@ export default function ContributePage() {
               Code Contributions
             </CardTitle>
             <CardDescription>
-              Help improve textbee by contributing to the codebase
+              Help improve Layer SMS by contributing to the codebase
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -221,14 +221,14 @@ export default function ContributePage() {
                   <CardTitle className='text-lg'>Security Reports</CardTitle>
                   <CardDescription>
                     Report security vulnerabilities privately to{' '}
-                    <a href='mailto:security@textbee.dev'>
-                      security@textbee.dev
+                    <a href='mailto:security@layersms.com'>
+                      security@layersms.com
                     </a>
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button className='w-full' variant='outline' asChild>
-                    <Link href='mailto:security@textbee.dev'>
+                    <Link href='mailto:security@layersms.com'>
                       <Shield className='mr-2 h-4 w-4' />
                       Report Vulnerability
                     </Link>
