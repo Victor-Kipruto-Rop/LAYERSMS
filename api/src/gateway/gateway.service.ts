@@ -163,7 +163,7 @@ export class GatewayService {
 
       throw new HttpException(
         {
-          message: `Active device limit reached: your plan allows up to ${deviceLimit} active device(s) and you have ${activeDeviceCount}. Disable or delete another device, or upgrade your plan at https://textbee.dev/pricing`,
+          message: `Active device limit reached: your plan allows up to ${deviceLimit} active device(s) and you have ${activeDeviceCount}. Disable or delete another device, or upgrade your plan at https://app.layersms.com/dashboard/account/billing`,
           hasReachedLimit: true,
           deviceLimit,
           activeDeviceCount,
