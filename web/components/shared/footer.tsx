@@ -29,14 +29,14 @@ export default function Footer() {
       <div className='mx-auto flex max-w-7xl flex-col items-start gap-4 px-4 py-6 sm:items-center sm:px-6 md:flex-row md:justify-between lg:px-8'>
         <div className='flex items-center gap-2'>
           <Image
-            src='/images/logo.png'
-            alt='textbee logo'
+            src='/layer-sms-mark.svg'
+            alt='Layer SMS logo'
             width={20}
             height={20}
             className='h-5 w-5 rounded-full bg-white'
           />
           <span className='text-sm text-muted-foreground'>
-            © {new Date().getFullYear()} textbee.dev
+            © {new Date().getFullYear()} Layer SMS
           </span>
         </div>
 
