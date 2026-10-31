@@ -26,7 +26,7 @@ describe('EmailTemplatesService', () => {
     expect(r.version).toBe(0)
     expect(r.document.subject).toBe('Your Layer SMS password was changed')
     expect(r.document.text).toContain('Hi Ada,')
-    expect(r.document.text).toContain('This is a notice about your textbee account.')
+    expect(r.document.text).toContain('This is a notice about your Layer SMS account.')
   })
 
   it('uses override fields that are present and keeps the rest', async () => {
@@ -38,7 +38,7 @@ describe('EmailTemplatesService', () => {
 
     expect(r.version).toBe(4)
     expect(r.document.subject).toBe('Password updated, Ada')
-    expect(r.document.text).toContain('The password on your textbee account was changed.')
+    expect(r.document.text).toContain('The password on your Layer SMS account was changed.')
   })
 
   it('falls back to the default when an override uses an unknown placeholder', async () => {
@@ -149,7 +149,7 @@ describe('EmailTemplatesService', () => {
 
     const bad = build([{ key: 'footer_notice', body: 'Footer {{firstName}}', version: 2 }])
     const r = await bad.service.render('T3', T3_VARS)
-    expect(r.document.text).toContain('This is a notice about your textbee account.')
+    expect(r.document.text).toContain('This is a notice about your Layer SMS account.')
     expect(bad.warn).toHaveBeenCalled()
   })
 
