@@ -106,14 +106,14 @@ export default function HomePage() {
                 <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-[#124A3B] text-[#2ECC87]'><Layers3 className='h-5 w-5' /></div>
                 <div><p className='text-sm font-semibold text-white'>Layer SMS Console</p><p className='text-xs text-[#9BB8AA]'>Messaging workspace</p></div>
               </div>
-              <span className='rounded-full border border-[#2ECC87]/25 bg-[#2ECC87]/10 px-2.5 py-1 text-[11px] font-medium text-[#79E5B5]'>Gateway connected</span>
+              <span className='rounded-full border border-[#2ECC87]/25 bg-[#2ECC87]/10 px-2.5 py-1 text-[11px] font-medium text-[#79E5B5]'>Sample workspace</span>
             </div>
             <div className='grid grid-cols-2 gap-3 p-5'>
               <div className='rounded-2xl border border-white/10 bg-[#124A3B]/55 p-4'>
                 <p className='text-xs text-[#AFC8BC]'>Gateway devices</p><p className='mt-3 text-3xl font-semibold text-white'>01</p><p className='mt-1 text-xs text-[#79E5B5]'>Paired device</p>
               </div>
               <div className='rounded-2xl border border-white/10 bg-[#124A3B]/55 p-4'>
-                <p className='text-xs text-[#AFC8BC]'>API status</p><p className='mt-3 text-3xl font-semibold text-white'>Ready</p><p className='mt-1 text-xs text-[#79E5B5]'>Authenticated requests</p>
+                <p className='text-xs text-[#AFC8BC]'>Integration</p><p className='mt-3 text-3xl font-semibold text-white'>REST API</p><p className='mt-1 text-xs text-[#79E5B5]'>API-key authentication</p>
               </div>
             </div>
             <div className='px-5 pb-5'>
