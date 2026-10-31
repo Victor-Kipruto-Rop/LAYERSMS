@@ -9,7 +9,8 @@ import type { NotificationEvent } from '@/lib/api'
 // off brought every dismissed message back. They are cleared when those
 // components are finally removed.
 
-const LEGACY_MIGRATION_MARKER = 'textbee.notifications.migrated'\nconst MIGRATION_MARKER = 'layersms.notifications.migrated'
+const LEGACY_MIGRATION_MARKER = 'textbee.notifications.migrated'
+const MIGRATION_MARKER = 'layersms.notifications.migrated'
 
 /** Legacy storage key to the notification key it corresponds to. */
 const LEGACY_DISMISSALS: Array<{ storageKey: string; matches: (value: string) => boolean; notificationKey: string }> = [
