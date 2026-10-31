@@ -1,5 +1,5 @@
 const POLAR_CUSTOMER_PORTAL_REQUEST_BASE =
-  'https://polar.sh/layersms/portal/request'
+  process.env.NEXT_PUBLIC_POLAR_CUSTOMER_PORTAL_REQUEST_URL || 'https://app.layersms.com/dashboard/account/billing'
 
 export function polarCustomerPortalRequestUrl(
   email?: string | null
@@ -20,7 +20,7 @@ export const ExternalLinks = {
   patreon: 'https://layersms.com/community',
   github: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS',
   discord: 'https://layersms.com/community',
-  polar: 'https://layersms.com/billing',
+  polar: 'https://app.layersms.com/dashboard/account/billing',
   twitter: 'https://layersms.com/community',
   linkedin: 'https://layersms.com/about',
 }
