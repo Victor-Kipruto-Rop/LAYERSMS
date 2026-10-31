@@ -33,8 +33,8 @@ export default function CommunityLinks() {
     },
     {
       icon: '/images/x.svg',
-      name: 'Twitter',
-      url: 'https://twitter.com/intent/tweet?url=https://layersms.com&text=🚀+Just+discovered+@layersms+-+an+amazing+SMS+gateway+platform!+Perfect+for+those+who+need+reliable+sms+integration.',
+      name: 'X',
+      url: 'https://twitter.com/intent/tweet?url=https://layersms.com&text=🚀+Just+discovered+-+an+amazing+SMS+gateway+platform!+Perfect+for+those+who+need+reliable+sms+integration.',
     },
     {
       icon: '/images/linkedin2.svg',
@@ -97,16 +97,16 @@ export default function CommunityLinks() {
 
         <Card>
           <CardHeader>
-            <CardTitle>Discord</CardTitle>
+            <CardTitle>Community Discussions</CardTitle>
           </CardHeader>
           <CardContent>
             <p className='text-sm text-muted-foreground mb-4'>
-              Join our community for support and updates.
+              Ask questions and discuss Layer SMS with the community.
             </p>
             <Button asChild className='w-full' variant='outline'>
               <Link href={ExternalLinks.discord} prefetch={false} target='_blank'>
                 <MessageSquare className='mr-2 h-4 w-4' />
-                Join Discord
+                Open discussions
               </Link>
             </Button>
           </CardContent>
@@ -118,12 +118,12 @@ export default function CommunityLinks() {
           </CardHeader>
           <CardContent>
             <p className='text-sm text-muted-foreground mb-4'>
-              Follow us on X for the latest updates and announcements.
+              Share Layer SMS on X.
             </p>
             <Button asChild className='w-full' variant='outline'>
               <Link href={ExternalLinks.twitter} prefetch={false} target='_blank'>
                 <Twitter className='mr-2 h-4 w-4' />
-                Follow on X
+                Share on X
               </Link>
             </Button>
           </CardContent>
@@ -135,12 +135,12 @@ export default function CommunityLinks() {
           </CardHeader>
           <CardContent>
             <p className='text-sm text-muted-foreground mb-4'>
-              Connect with us on LinkedIn for updates and news.
+              Share Layer SMS on LinkedIn.
             </p>
             <Button asChild className='w-full' variant='outline'>
               <Link href={ExternalLinks.linkedin} prefetch={false} target='_blank'>
                 <Linkedin className='mr-2 h-4 w-4' />
-                Connect on LinkedIn
+                Share on LinkedIn
               </Link>
             </Button>
           </CardContent>
