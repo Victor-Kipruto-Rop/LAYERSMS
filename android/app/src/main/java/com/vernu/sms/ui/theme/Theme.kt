@@ -17,14 +17,14 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 private val LightColorScheme = lightColorScheme(
-    primary = Orange700,
+    primary = Emerald700,
     onPrimary = Color.White,
-    primaryContainer = OrangeLight,
-    onPrimaryContainer = Orange900,
-    secondary = Orange600,
+    primaryContainer = EmeraldLight,
+    onPrimaryContainer = ForestSecondary,
+    secondary = Emerald,
     onSecondary = Color.White,
-    secondaryContainer = OrangeLight,
-    onSecondaryContainer = Orange900,
+    secondaryContainer = EmeraldLight,
+    onSecondaryContainer = ForestSecondary,
     background = Gray50,
     onBackground = Gray900,
     surface = Color.White,
@@ -36,24 +36,24 @@ private val LightColorScheme = lightColorScheme(
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Orange600,
+    primary = Emerald,
     onPrimary = Color.White,
-    primaryContainer = Orange900,
-    onPrimaryContainer = OrangeLight,
-    secondary = Orange700,
+    primaryContainer = ForestSecondary,
+    onPrimaryContainer = EmeraldLight,
+    secondary = Emerald700,
     onSecondary = Color.White,
-    background = Gray900,
+    background = Forest,
     onBackground = Gray100,
-    surface = Color(0xFF1F2937),
+    surface = Color(0xFF124A3B),
     onSurface = Gray100,
-    surfaceVariant = Color(0xFF374151),
+    surfaceVariant = Color(0xFF165642),
     onSurfaceVariant = Gray400,
-    outline = Color(0xFF4B5563),
+    outline = Color(0xFF39745E),
     error = Red500,
 )
 
 @Composable
-fun TextbeeTheme(
+fun LayerSmsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
