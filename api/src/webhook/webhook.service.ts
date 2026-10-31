@@ -1139,7 +1139,7 @@ export class WebhookService {
       try {
         await this.mailService.sendEmailFromTemplate({
           to: user.email,
-          subject: 'Your webhook was paused – textbee',
+          subject: 'Your webhook was paused – Layer SMS',
           template: 'webhook-subscription-disabled',
           context: {
             name: firstName(user.name),
