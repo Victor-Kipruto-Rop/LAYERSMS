@@ -4,7 +4,7 @@ const DOCS = 'https://docs.layersms.com'
 export const Routes = {
   landingPage: SITE,
   contribute: `${SITE}/community`,
-  useCases: `${SITE}/solutions`,
+  useCases: `${SITE}/#platform`,
   quickstart: `${DOCS}/quickstart`,
   login: '/login',
   register: '/register',
