@@ -68,7 +68,7 @@ test.describe('api guide (mocked API, no real backend)', () => {
     await page.getByRole('tab', { name: 'Go' }).click()
     await expect(page.getByText('package main').first()).toBeVisible()
 
-    await page.getByRole('tab', { name: 'Python SDK', exact: true }).click()
+    await page.getByRole('tab', { name: 'Legacy Python SDK', exact: true }).click()
     await expect(page.getByText('pip install textbee')).toBeVisible()
     await expect(page.getByText('from textbee import Textbee').first()).toBeVisible()
   })
