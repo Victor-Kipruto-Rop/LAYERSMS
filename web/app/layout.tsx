@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   applicationName: 'Layer SMS',
   icons: { icon: '/layer-sms-mark.svg', shortcut: '/layer-sms-mark.svg' },
 
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://layersms.com'),
 }
 
 export default async function RootLayout({ children }: PropsWithChildren) {
