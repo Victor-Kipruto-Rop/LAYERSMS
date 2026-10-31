@@ -12,7 +12,7 @@ The Layer SMS Android gateway supports two build variants:
 
 | Feature | Dev | Prod |
 |---------|-----|------|
-| Package Name | `com.vernu.sms.dev` | `com.vernu.sms` |
+| Package Name | `com.layersms.gateway.dev` | `com.layersms.gateway` |
 | App Name | "Layer SMS Dev" | "Layer Layer SMS Gateway" |
 | API Base URL | `https://api-dev.layersms.com/api/v1/` | `https://api.layersms.com/api/v1/` |
 | Firebase Config | `app/src/dev/google-services.json` | `app/src/prod/google-services.json` |
@@ -29,7 +29,7 @@ The Layer SMS Android gateway supports two build variants:
 #### For Development:
 - Create a new Firebase project for development
 - Download the `google-services.json` for your dev project
-- **Important**: Make sure the package name in Firebase is set to `com.vernu.sms.dev`
+- **Important**: Make sure the package name in Firebase is set to `com.layersms.gateway.dev`
 - Replace the template file at `app/src/dev/google-services.json` with your actual dev configuration
 
 ### 2. API Configuration
@@ -103,5 +103,5 @@ if (BuildConfig.ENVIRONMENT.equals("development")) {
 - Verify API URLs are accessible
 
 ### Firebase Issues:
-- Confirm the package name in Firebase matches the variant (`com.vernu.sms.dev` for dev)
+- Confirm the package name in Firebase matches the variant (`com.layersms.gateway.dev` for dev)
 - Ensure SHA-1 fingerprints are added to Firebase if using authentication 
