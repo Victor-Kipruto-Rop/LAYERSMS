@@ -24,7 +24,7 @@ const NOTICES =
 export const unsubscribeConfirmPage = (token: string) =>
   page(
     'Unsubscribe from Layer SMS product emails?',
-    '<p>You will stop getting product tips and offers from textbee.</p>' +
+    '<p>You will stop getting product tips and offers from Layer SMS.</p>' +
       NOTICES +
       form('unsubscribe', token, 'Unsubscribe'),
   )
