@@ -2,7 +2,7 @@
 
 ## Overview
 
-textbee Android is mid-migration from a Java/XML legacy codebase to Kotlin + Jetpack Compose. The new UI runs in parallel with the legacy UI — users can switch between them via Settings. The SplashActivity routes to the appropriate UI on launch.
+Layer SMS Android is mid-migration from a Java/XML legacy codebase to Kotlin + Jetpack Compose. The new UI runs in parallel with the legacy UI — users can switch between them via Settings. The SplashActivity routes to the appropriate UI on launch.
 
 ---
 
@@ -11,8 +11,8 @@ textbee Android is mid-migration from a Java/XML legacy codebase to Kotlin + Jet
 ### Theme
 | File | Notes |
 |---|---|
-| `ui/theme/Color.kt` | Brand orange (`#C4620A`), full light/dark palette |
-| `ui/theme/Theme.kt` | `TextbeeTheme` wrapper, `dynamicColor = false` to preserve brand color |
+| `ui/theme/Color.kt` | Layer SMS forest and emerald palette (`#0B2E24`, `#2ECC87`, `#124A3B`), full light/dark palette |
+| `ui/theme/Theme.kt` | `LayerSmsTheme` wrapper, `dynamicColor = false` to preserve brand color |
 | `ui/theme/Type.kt` | Material3 typography scale |
 
 ### Infrastructure
