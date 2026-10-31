@@ -13,8 +13,8 @@ The Layer SMS Android gateway supports two build variants:
 | Feature | Dev | Prod |
 |---------|-----|------|
 | Package Name | `com.vernu.sms.dev` | `com.vernu.sms` |
-| App Name | "Layer SMS Dev" | "SMS Gateway" |
-| API Base URL | `https://api-dev.textbee.dev/api/v1/` | `https://api.textbee.dev/api/v1/` |
+| App Name | "Layer SMS Dev" | "Layer Layer SMS Gateway" |
+| API Base URL | `https://api-dev.layersms.com/api/v1/` | `https://api.layersms.com/api/v1/` |
 | Firebase Config | `app/src/dev/google-services.json` | `app/src/prod/google-services.json` |
 | Version Suffix | `-dev` appended | No suffix |
 
@@ -34,14 +34,14 @@ The Layer SMS Android gateway supports two build variants:
 
 ### 2. API Configuration
 
-The existing API origins are retained for backward compatibility until you configure your own Layer SMS API deployment:
-- **Dev**: `https://api-dev.textbee.dev/api/v1/`
-- **Prod**: `https://api.textbee.dev/api/v1/`
+The Layer SMS API origins are configured for the new production domain:
+- **Dev**: `https://api-dev.layersms.com/api/v1/`
+- **Prod**: `https://api.layersms.com/api/v1/`
 
 To change the dev API URL, edit the `buildConfigField` in `app/build.gradle`:
 ```gradle
 dev {
-    buildConfigField "String", "API_BASE_URL", '"https://api-dev.textbee.dev/api/v1/"'
+    buildConfigField "String", "API_BASE_URL", '"https://api-dev.layersms.com/api/v1/"'
 }
 ```
 
@@ -73,8 +73,8 @@ dev {
 ## Installation
 
 Both variants can be installed simultaneously on the same device since they have different package names:
-- Dev app will show as "SMS Gateway (Dev)"
-- Prod app will show as "SMS Gateway"
+- Dev app will show as "Layer SMS Gateway (Dev)"
+- Prod app will show as "Layer Layer SMS Gateway"
 
 ## Environment Detection
 
