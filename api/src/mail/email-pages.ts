@@ -1,6 +1,6 @@
 import { escapeHtml } from './email-render'
 
-const SUPPORT_URL = 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions'
+const SUPPORT_URL = 'https://layersms.com/support'
 
 const page = (title: string, body: string) =>
   '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">' +
