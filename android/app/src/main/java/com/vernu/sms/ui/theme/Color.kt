@@ -2,11 +2,11 @@ package com.vernu.sms.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Orange700 = Color(0xFFC4620A)
-val Orange800 = Color(0xFFA04405)
-val Orange600 = Color(0xFFB45309)
-val Orange900 = Color(0xFF92400E)
-val OrangeLight = Color(0xFFFFF7ED)
+val Emerald700 = Color(0xFF15945F)
+val Forest = Color(0xFF0B2E24)
+val Emerald = Color(0xFF2ECC87)
+val ForestSecondary = Color(0xFF124A3B)
+val EmeraldLight = Color(0xFFE5F9EF)
 
 val Gray50  = Color(0xFFF9FAFB)
 val Gray100 = Color(0xFFF3F4F6)
@@ -20,7 +20,7 @@ val Red500   = Color(0xFFEF4444)
 val Blue500  = Color(0xFF3B82F6)
 val Amber500 = Color(0xFFF59E0B)
 
-// State colors. Orange stays the brand accent and never means "ok".
+// Status colors are semantic; emerald remains the Layer SMS brand accent.
 object StatusColors {
     val success = Green500
     val warning = Amber500
