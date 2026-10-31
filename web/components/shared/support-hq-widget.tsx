@@ -14,7 +14,7 @@ export function openSupportChat() {
   // @ts-ignore
   const widget = window.SupportHQWidget
   if (widget) widget.open()
-  else window.location.href = 'mailto:support@textbee.dev'
+  else window.location.href = 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions'
 }
 
 export default function SupportHQWidget() {
