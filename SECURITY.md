@@ -2,4 +2,6 @@
 
 ## Reporting a Vulnerability
 
-If you discover any vulnerability or security issue, we kindly request that you refrain from creating a public issue. Instead, send an email detailing the vulnerability to contact@textbee.dev.
+Please do not disclose vulnerabilities in public issues or discussions. Use GitHub's private vulnerability reporting for this repository from the Security tab: https://github.com/Victor-Kipruto-Rop/LAYERSMS/security/advisories/new.
+
+Include the affected component, reproduction steps, impact, and any relevant logs with secrets removed. Do not include credentials, API keys, phone numbers, or personal message contents.
