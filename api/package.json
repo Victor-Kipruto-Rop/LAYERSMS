@@ -1,8 +1,8 @@
 {
-  "name": "sms-gateway-backend",
+  "name": "@layersms/api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Layer SMS messaging gateway API",
+  "author": "Layer SMS",
   "private": true,
   "license": "UNLICENSED",
   "packageManager": "pnpm@9.14.2",
