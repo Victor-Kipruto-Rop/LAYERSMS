@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace "com.vernu.sms"
     compileSdk 34
 
     defaultConfig {
@@ -50,7 +51,7 @@ android {
     productFlavors {
         dev {
             dimension "environment"
-            applicationId "com.vernu.sms.dev"
+            applicationId "com.layersms.gateway.dev"
             versionNameSuffix "-dev"
             buildConfigField "String", "API_BASE_URL", '"https://api-dev.layersms.com/api/v1/"'
             buildConfigField "String", "ENVIRONMENT", '"development"'
@@ -59,7 +60,7 @@ android {
         
         prod {
             dimension "environment"
-            applicationId "com.vernu.sms"
+            applicationId "com.layersms.gateway"
             buildConfigField "String", "API_BASE_URL", '"https://api.layersms.com/api/v1/"'
             buildConfigField "String", "ENVIRONMENT", '"production"'
             resValue "string", "app_name", "Layer SMS Gateway"
