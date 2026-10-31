@@ -37,7 +37,16 @@ describe('classifyChannel', () => {
     ).toBe('device')
   })
 
-  it('continues to recognise legacy TextBee Android clients', () => {\n    expect(classifyChannel({ hasBearer: false, sdkClient: 'textbee-android/2.9.0' })).toBe('device')\n  })\n\n  it('ignores the query string when matching a route', () => {
+  it('continues to recognise legacy TextBee Android clients', () => {
+    expect(
+      classifyChannel({
+        hasBearer: false,
+        sdkClient: 'textbee-android/2.9.0',
+      }),
+    ).toBe('device')
+  })
+
+  it('ignores the query string when matching a route', () => {
     expect(
       classifyChannel({
         hasBearer: false,
