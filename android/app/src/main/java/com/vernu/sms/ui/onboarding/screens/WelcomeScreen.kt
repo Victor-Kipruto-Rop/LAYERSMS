@@ -39,7 +39,7 @@ fun WelcomeScreen(
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_app_logo),
+                painter = painterResource(id = R.drawable.layer_sms_app_logo),
                 contentDescription = null,
                 modifier = Modifier.size(60.dp)
             )
