@@ -7,7 +7,7 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER:-adminUser}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASS:-adminPassword}
-      - MONGO_INITDB_DATABASE=textbee
+      - MONGO_INITDB_DATABASE=layersms
     volumes:
       # - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
       - mongodb_data:/data/db
