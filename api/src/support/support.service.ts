@@ -151,7 +151,7 @@ export class SupportService {
           email: user.email,
           message: sanitizedDto.message || 'No reason provided',
           appLogoUrl:
-            process.env.APP_LOGO_URL || 'https://textbee.dev/logo.png',
+            process.env.APP_LOGO_URL || 'https://layersms.com/layer-sms-mark.svg',
           currentYear: new Date().getFullYear(),
         },
       }, {
