@@ -33,7 +33,7 @@ describe('MailService', () => {
     const { context } = mailerService.sendMail.mock.calls[0][0]
     expect(context).toMatchObject({
       name: 'Ada',
-      brandName: 'textbee.dev',
+      brandName: 'Layer SMS',
       year: new Date().getFullYear(),
     })
   })
