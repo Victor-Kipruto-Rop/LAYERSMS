@@ -35,10 +35,10 @@ const SAMPLES: Record<string, Record<string, any>> = {
     name: 'Alex',
     title: 'A webhook was turned off',
     subscriptionName: 'Order updates',
-    deliveryUrl: 'https://example.com/hooks/textbee',
+    deliveryUrl: 'https://example.com/hooks/layersms',
     failureCount: 42,
     ctaLabel: 'Review webhooks',
-    ctaUrl: 'https://app.textbee.dev/dashboard/webhooks',
+    ctaUrl: 'https://app.layersms.com/dashboard/webhooks',
   },
   'webhook-auto-disable-admin-summary': {
     title: 'Webhooks auto-disabled',
