@@ -12,14 +12,14 @@ const nextConfig = {
       },
       {
         source: '/android',
-        destination: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/releases',
+        destination: 'https://layersms.com/download',
         permanent: false,
       },
       // The invite itself lives behind github.com/Victor-Kipruto-Rop/LAYERSMS/discussions, so it can rotate
       // in one place.
       {
         source: '/discord',
-        destination: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions',
+        destination: 'https://layersms.com/community',
         permanent: false,
       },
     ]
