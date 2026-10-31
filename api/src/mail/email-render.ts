@@ -419,7 +419,7 @@ export const verifyLink = (
 
 // ---------------- outer documents
 
-export const LOGO_URL = 'https://raw.githubusercontent.com/Victor-Kipruto-Rop/LAYERSMS/main/web/public/layer-sms-mark.svg'
+export const LOGO_URL = 'https://layersms.com/layer-sms-mark.svg'
 
 /** Branded notice: logo row, body, footer. Used by shell templates. */
 export const wrapShell = (
