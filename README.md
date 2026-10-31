@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://textbee.dev?ref=gh-readme">
-    <img src=".github/assets/logo.png" alt="textbee logo" width="96" height="96">
+  <a href="https://github.com/Victor-Kipruto-Rop/LAYERSMS">
+    <img src=".github/assets/logo.png" alt="Layer SMS logo" width="96" height="96">
   </a>
 </p>
 
-<h1 align="center">textbee: open-source Android SMS gateway</h1>
+<h1 align="center">Layer SMS: messaging infrastructure, built for scale</h1>
 
 <p align="center">
   Turn an Android phone into an SMS API. Send and receive text messages from your apps, scripts, and AI agents over REST, webhooks, and MCP.<br>
@@ -13,10 +13,10 @@
 
 <p align="center">
   <a href="https://textbee.dev?ref=gh-readme"><b>Website</b></a> ·
-  <a href="https://textbee.dev/docs?ref=gh-readme"><b>Docs</b></a> ·
-  <a href="https://textbee.dev/docs/api-reference?ref=gh-readme"><b>API reference</b></a> ·
-  <a href="https://textbee.dev/download?ref=gh-readme"><b>Download the app</b></a> ·
-  <a href="https://textbee.dev/discord"><b>Discord</b></a> ·
+  <a href="./"><b>Docs</b></a> ·
+  <a href="http://localhost:3001"><b>API reference</b></a> ·
+  <a href="./android"><b>Download the app</b></a> ·
+  <a href="https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions"><b>Discord</b></a> ·
   <a href="#self-hosting"><b>Self-host</b></a>
 </p>
 
@@ -38,9 +38,9 @@
   </a>
 </p>
 
-## What is textbee?
+## What is Layer SMS?
 
-textbee is a free, open-source **SMS gateway** that uses an Android phone and its SIM card to send and receive SMS. Your code talks to a REST API, the API pushes each message to the phone, and the phone sends it over the carrier network. Incoming messages flow back to you through the API, the web dashboard, or webhooks.
+Layer SMS is an open-source **SMS gateway** that uses an Android phone and its SIM card to send and receive SMS. Your code talks to a REST API, the API pushes each message to the phone, and the phone sends it over the carrier network. Incoming messages flow back to you through the API, the web dashboard, or webhooks.
 
 It is a drop-in **Twilio alternative** for OTP codes, alerts, reminders, and two-way SMS, at the cost of your carrier plan. Over 40,000 developers and businesses use it, and the whole stack is in this repository: the NestJS API, the Next.js dashboard, and the Kotlin Android app. textbee is built and maintained by [Nuver Labs](https://nuverlabs.com/?utm_source=textbee&utm_medium=github&utm_campaign=readme), a small software studio.
 
@@ -66,7 +66,7 @@ It is a drop-in **Twilio alternative** for OTP codes, alerts, reminders, and two
 - [Security](#security)
 - [License](#license)
 
-## Why textbee?
+## Why Layer SMS?
 
 | | textbee | Twilio and similar SMS APIs |
 |---|---|---|
@@ -623,7 +623,7 @@ Open the Android project in Android Studio from the `android/` folder. It has `d
 - [Docs](https://textbee.dev/docs?ref=gh-readme) and [FAQ](https://textbee.dev/docs/faq?ref=gh-readme)
 - Email: [contact@textbee.dev](mailto:contact@textbee.dev)
 
-## Who builds textbee
+## Who builds Layer SMS
 
 textbee is built and maintained by [Nuver Labs](https://nuverlabs.com/?utm_source=textbee&utm_medium=github&utm_campaign=readme), a small software studio that makes developer tools and AI products. The team also offers [custom development](https://textbee.dev/services?ref=gh-readme): integrations, SMS workflows, and self-hosted setups built on textbee.
 
