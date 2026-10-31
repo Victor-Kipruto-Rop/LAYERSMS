@@ -71,7 +71,7 @@ export const STEPS: StepDef[] = [
     id: 'register_device',
     label: 'Register your device',
     description:
-      'Turn your phone into your SMS gateway: scan the QR code below with the textbee app, then allow the SMS permission when the app asks.',
+      'Turn your phone into your SMS gateway: scan the QR code below with the Layer SMS Gateway app, then allow the SMS permission when the app asks.',
     doneDescription: 'Device registered. Register another the same way.',
     optional: false,
     timeEstimate: '~1 min',
