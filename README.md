@@ -78,7 +78,7 @@ cd ../web && pnpm test && pnpm typecheck && pnpm build
 
 ## Brand and deployment
 
-See [BRAND.md](BRAND.md) for the Layer SMS logo, colors, and usage rules. Configure your own production domain and service origins before deployment; this repository does not assume that a Layer SMS hosted production domain is already available.
+See [BRAND.md](BRAND.md) for the Layer SMS logo, colors, and usage rules. The production domain plan is `layersms.com`, with the console at `app.layersms.com`, API at `api.layersms.com`, development API at `api-dev.layersms.com`, docs at `docs.layersms.com`, status at `status.layersms.com`, and support at `support.layersms.com`. See [DOMAIN.md](DOMAIN.md) for DNS, TLS, OAuth, Firebase, email and deployment configuration. These hostnames must be provisioned and verified before launch.
 
 The existing API routes and Android application identifiers are preserved for compatibility. A domain, package identifier, SDK, and signing-key migration should be handled as a separately versioned release.
 
