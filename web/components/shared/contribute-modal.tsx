@@ -132,7 +132,7 @@ export function ContributeModal() {
               <CardHeader>
                 <CardTitle className='flex items-center gap-2 text-lg'>
                   <CircleDollarSign className='h-5 w-5' />
-                  Financial Support
+                  Support and billing
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -140,13 +140,13 @@ export function ContributeModal() {
                   <Button className='w-full' asChild>
                     <Link href={ExternalLinks.patreon} target='_blank'>
                       <Heart className='mr-2 h-4 w-4' />
-                      Monthly Support on Patreon
+                      Contact Layer SMS Support
                     </Link>
                   </Button>
                   <Button variant='outline' className='w-full' asChild>
                     <Link href={ExternalLinks.polar} target='_blank'>
                       <Star className='mr-2 h-4 w-4' />
-                      One-time Donation via Polar.sh
+                      Open Layer SMS Billing Portal
                     </Link>
                   </Button>
                   <Button
