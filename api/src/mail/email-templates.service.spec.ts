@@ -218,7 +218,7 @@ describe('EmailTemplatesService', () => {
 
     const r = await service.render('T3', T3_VARS)
 
-    expect(r.document.subject).toBe('Your textbee password was changed')
+    expect(r.document.subject).toBe('Your Layer SMS password was changed')
     expect(warn).toHaveBeenCalledWith(expect.stringContaining('base placeholder nickname'))
   })
 
@@ -241,7 +241,7 @@ describe('EmailTemplatesService', () => {
     const r = await service.render('T3', T3_VARS)
     await service.render('T3', T3_VARS)
 
-    expect(r.document.subject).toBe('Your textbee password was changed')
+    expect(r.document.subject).toBe('Your Layer SMS password was changed')
     expect(warn.mock.calls.filter(([m]) => m === 'email_template_base_missing key=T3')).toHaveLength(1)
   })
 
