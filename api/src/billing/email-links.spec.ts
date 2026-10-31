@@ -5,7 +5,7 @@ describe('BillingService - signed email links', () => {
   const secret = 'link-secret'
   const env = { ...process.env }
   const nowS = () => Math.floor(Date.now() / 1000)
-  const BILLING = 'http://localhost:3000/dashboard/account/billing'
+  const BILLING = 'https://app.layersms.com/dashboard/account/billing'
 
   const build = ({ subscription = null as any, session = null as any } = {}) => {
     const subscriptionModel = { findOne: jest.fn().mockResolvedValue(subscription) }
@@ -109,7 +109,7 @@ describe('BillingService - signed email links', () => {
       const { service } = build({ session: { ...open, ...change } })
 
       await expect(service.checkoutResumeRedirect(token())).resolves.toBe(
-        'http://localhost:3000/checkout/scale?billingInterval=yearly&from=email&ref=checkout_resume',
+        'https://app.layersms.com/checkout/scale?billingInterval=yearly&from=email&ref=checkout_resume',
       )
     })
 
@@ -120,7 +120,7 @@ describe('BillingService - signed email links', () => {
       })
 
       await expect(service.checkoutResumeRedirect(token())).resolves.toBe(
-        'http://localhost:3000/checkout/scale?billingInterval=monthly&from=email&ref=checkout_resume',
+        'https://app.layersms.com/checkout/scale?billingInterval=monthly&from=email&ref=checkout_resume',
       )
     })
 
@@ -135,7 +135,7 @@ describe('BillingService - signed email links', () => {
         const { service } = build()
 
         await expect(service.checkoutResumeRedirect(token())).resolves.toBe(
-          `http://localhost:3000/checkout/pro?billingInterval=${interval}&from=email&ref=checkout_resume`,
+          `https://app.layersms.com/checkout/pro?billingInterval=${interval}&from=email&ref=checkout_resume`,
         )
       },
     )
@@ -147,7 +147,7 @@ describe('BillingService - signed email links', () => {
       })
 
       await expect(service.checkoutResumeRedirect(token())).resolves.toBe(
-        'http://localhost:3000/checkout/scale?billingInterval=monthly&from=email&ref=checkout_resume',
+        'https://app.layersms.com/checkout/scale?billingInterval=monthly&from=email&ref=checkout_resume',
       )
     })
 
@@ -177,7 +177,7 @@ describe('BillingService - signed email links', () => {
       plan,
     }
     const YEARLY =
-      'http://localhost:3000/checkout/pro?billingInterval=yearly&from=email&ref=yearly_switch'
+      'https://app.layersms.com/checkout/pro?billingInterval=yearly&from=email&ref=yearly_switch'
     const BILLING_RETURN = `${BILLING}?from=email&ref=yearly_switch`
 
     const buildYearly = (subscription: any) => {
@@ -251,7 +251,7 @@ describe('BillingService - signed email links', () => {
       const { service } = buildYearly({ ...active, plan: { ...plan, name: 'pro plus' } })
 
       await expect(service.yearlySwitchRedirect(token())).resolves.toBe(
-        'http://localhost:3000/checkout/pro%20plus?billingInterval=yearly&from=email&ref=yearly_switch',
+        'https://app.layersms.com/checkout/pro%20plus?billingInterval=yearly&from=email&ref=yearly_switch',
       )
     })
 
