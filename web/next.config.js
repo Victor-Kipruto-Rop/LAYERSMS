@@ -16,11 +16,6 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: '/support',
-        destination: 'https://support.layersms.com',
-        permanent: false,
-      },
-      {
         source: '/android',
         destination: 'https://layersms.com/download',
         permanent: false,
