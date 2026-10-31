@@ -1,7 +1,7 @@
 // Email template renderer and helpers.
 //
-// THE CROSS-REPO CONTRACT. This file (textbee api, textbee-admin api) and email_render.py
-// (textbee-plus) must produce identical output. render-conformance.json holds the cases; every
+// THE CROSS-REPO CONTRACT. This file (Layer SMS API and Layer SMS admin API) and email_render.py
+// (Layer SMS tooling) must produce identical output. render-conformance.json holds the cases; every
 // repo runs it against its own copy. Change a behavior in email_render.py, regenerate the
 // fixture, port the change here in the same pass, and copy all three files to every repo.
 // See email_render.py for the template body format.
