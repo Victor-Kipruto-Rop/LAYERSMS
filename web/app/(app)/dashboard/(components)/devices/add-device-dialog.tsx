@@ -70,7 +70,7 @@ const AddDeviceDialog = forwardRef<AddDeviceHandle>(function AddDeviceDialog(
               the app instead
             </li>
             <li>
-              Open the textbee.dev app and scan the QR code or paste the key
+              Open the Layer SMS Gateway app and scan the QR code or paste the key
               manually. Your device should appear in the list when the link
               succeeds.
             </li>
