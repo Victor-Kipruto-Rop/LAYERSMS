@@ -45,4 +45,4 @@ See [DOMAIN.md](DOMAIN.md) for DNS, TLS, environment variables, OAuth, Firebase 
 
 ## Compatibility rule
 
-A visual rebrand must not silently change API routes, Android application IDs, SDK package names, production hostnames, credentials, or signing keys. Coordinate those changes as a versioned migration with a documented compatibility window.
+Layer SMS owns the product identity and this maintained fork's new brand assets and modifications. The upstream MIT copyright and licence must remain in distributed copies. Android IDs are now `com.layersms.gateway` and `com.layersms.gateway.dev`; the new app requires new Firebase registrations and is not an in-place update for older TextBee installations. Existing API routes and external TextBee SDK package names remain compatibility surfaces until Layer SMS SDK packages are published.
