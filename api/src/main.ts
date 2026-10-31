@@ -36,6 +36,7 @@ async function bootstrap() {
   const config = buildSwaggerConfig({
     title: 'Layer SMS API',
     description: 'Layer SMS messaging gateway API. Send and receive SMS through paired Android devices.',
+    servers: [process.env.API_PUBLIC_URL || 'https://api.layersms.com'],
   })
   const document = SwaggerModule.createDocument(app, config)
   // Every route that carries the spec itself, including swagger-ui-init.js,
