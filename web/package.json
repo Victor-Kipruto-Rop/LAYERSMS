@@ -1,5 +1,7 @@
 {
   "name": "layersms-web",
+  "description": "Layer SMS web console and public website",
+  "author": "Victor Kipruto Rop",
   "version": "2.0.0",
   "private": true,
   "packageManager": "pnpm@9.14.2",
