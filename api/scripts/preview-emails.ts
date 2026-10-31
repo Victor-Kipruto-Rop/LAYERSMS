@@ -135,10 +135,10 @@ async function main() {
     process.exitCode = 1
   }
 
-  const index = `<!doctype html><meta charset="utf-8"><title>textbee email previews</title>
+  const index = `<!doctype html><meta charset="utf-8"><title>Layer SMS email previews</title>
 <style>body{font:16px/1.6 system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1rem}
-h1{font-size:1.25rem}li{margin:.35rem 0}a{color:#EA580C}</style>
-<h1>textbee email previews</h1>
+h1{font-size:1.25rem}li{margin:.35rem 0}a{color:#15945F}</style>
+<h1>Layer SMS email previews</h1>
 <p>Rendered ${rendered.length} templates at ${new Date().toISOString()}.</p>
 <ul>${rendered.map((n) => `<li><a href="./${n}.html">${n}</a></li>`).join('')}</ul>`
   fs.writeFileSync(path.join(OUT_DIR, 'index.html'), index)
