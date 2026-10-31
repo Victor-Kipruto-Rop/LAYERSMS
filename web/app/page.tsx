@@ -176,7 +176,7 @@ export default function HomePage() {
       <footer className='border-t border-white/10'>
         <div className='mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#AFC8BC] sm:flex-row sm:items-center sm:justify-between sm:px-8'>
           <span>© {new Date().getFullYear()} Layer SMS. Messaging infrastructure, built for scale.</span>
-          <nav className='flex flex-wrap gap-5'><a href='https://layersms.com/privacy' className='hover:text-white'>Privacy</a><a href='https://layersms.com/terms' className='hover:text-white'>Terms</a><a href='https://status.layersms.com' className='hover:text-white'>Status</a><a href='https://support.layersms.com' className='hover:text-white'>Support</a></nav>
+          <nav className='flex flex-wrap gap-5'><a href='https://layersms.com/privacy' className='hover:text-white'>Privacy</a><a href='https://layersms.com/terms' className='hover:text-white'>Terms</a><a href='https://status.layersms.com' className='hover:text-white'>Status</a><a href='/support' className='hover:text-white'>Support</a></nav>
         </div>
       </footer>
     </main>
