@@ -183,7 +183,7 @@ export default function ApiGuide() {
           is global. Only the SDKs need installing; the REST samples do not. */}
       {language === 'sdk' && (
         <div className='space-y-1.5'>
-          <p className='text-sm font-medium'>Install the SDK</p>
+          <p className='text-sm font-medium'>Install legacy SDK</p>
           <PackageManagerTabs pkg={SDK_PACKAGE} />
         </div>
       )}
@@ -268,7 +268,7 @@ export default function ApiGuide() {
               rel='noopener noreferrer'
             >
               <ExternalLink className='h-3.5 w-3.5' />
-              JavaScript SDK on npm
+              Legacy TextBee JavaScript SDK (npm)
             </a>
           </Button>
           <Button asChild variant='outline' size='sm'>
@@ -278,7 +278,7 @@ export default function ApiGuide() {
               rel='noopener noreferrer'
             >
               <ExternalLink className='h-3.5 w-3.5' />
-              Python SDK on PyPI
+              Legacy TextBee Python SDK (PyPI)
             </a>
           </Button>
         </div>
