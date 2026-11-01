@@ -39,7 +39,7 @@ fun WelcomeScreen(
             contentAlignment = Alignment.Center
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_app_logo),
+                painter = painterResource(id = R.drawable.layer_sms_app_logo),
                 contentDescription = null,
                 modifier = Modifier.size(60.dp)
             )
@@ -48,7 +48,7 @@ fun WelcomeScreen(
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
-            text = "textbee",
+            text = "Layer SMS",
             style = MaterialTheme.typography.headlineLarge,
             fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.primary
@@ -70,7 +70,7 @@ fun WelcomeScreen(
             verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
             listOf(
-                "Create a free account at textbee.dev",
+                "Create a Layer SMS account at layersms.com",
                 "Connect this phone as your SMS gateway",
                 "Send SMS via API from any app or automation"
             ).forEachIndexed { i, step ->
@@ -121,7 +121,7 @@ fun WelcomeScreen(
         TextButton(
             onClick = {
                 context.startActivity(
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://app.textbee.dev/register"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://app.layersms.com/register"))
                 )
             }
         ) {
@@ -136,12 +136,12 @@ fun WelcomeScreen(
         TextButton(
             onClick = {
                 context.startActivity(
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://textbee.dev"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://layersms.com"))
                 )
             }
         ) {
             Text(
-                text = "textbee.dev",
+                text = "layersms.com",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )

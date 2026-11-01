@@ -8,7 +8,7 @@ import android.os.Build
 import android.telephony.SmsManager
 import android.util.Log
 import com.vernu.sms.AppConstants
-import com.vernu.sms.TextbeeUtils
+import com.vernu.sms.LayerSmsUtils
 import com.vernu.sms.dtos.SMSDTO
 import com.vernu.sms.receivers.SMSStatusReceiver
 import com.vernu.sms.workers.SMSStatusUpdateWorker
@@ -33,7 +33,7 @@ object SMSHelper {
         timing: SendTiming = SendTiming(),
         sim: SimReport? = null
     ): Boolean {
-        if (!TextbeeUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS)) {
+        if (!LayerSmsUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS)) {
             Log.e(TAG, "SMS permission not granted. Unable to send SMS.")
             reportPermissionError(context, smsId, smsBatchId, timing, sim)
             return false
@@ -56,7 +56,7 @@ object SMSHelper {
             }
             true
         } catch (e: Exception) {
-            TextbeeUtils.logException(e, "Exception when sending SMS")
+            LayerSmsUtils.logException(e, "Exception when sending SMS")
             reportSendingError(context, smsId, smsBatchId, e.message, timing, sim)
             false
         }
@@ -74,8 +74,8 @@ object SMSHelper {
         timing: SendTiming = SendTiming(),
         sim: SimReport? = null
     ): Boolean {
-        if (!TextbeeUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS) ||
-            !TextbeeUtils.isPermissionGranted(context, Manifest.permission.READ_PHONE_STATE)
+        if (!LayerSmsUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS) ||
+            !LayerSmsUtils.isPermissionGranted(context, Manifest.permission.READ_PHONE_STATE)
         ) {
             Log.e(TAG, "SMS or Phone State permission not granted. Unable to send SMS from specific SIM.")
             reportPermissionError(context, smsId, smsBatchId, timing, sim)
@@ -105,7 +105,7 @@ object SMSHelper {
             }
             true
         } catch (e: Exception) {
-            TextbeeUtils.logException(e, "Exception when sending SMS from specific SIM")
+            LayerSmsUtils.logException(e, "Exception when sending SMS from specific SIM")
             reportSendingError(context, smsId, smsBatchId, e.message, timing, sim)
             false
         }
@@ -134,7 +134,7 @@ object SMSHelper {
         try {
             PermissionFailureNotifier.maybeNotify(context)
         } catch (e: Exception) {
-            TextbeeUtils.logException(e, "Permission failure notification failed")
+            LayerSmsUtils.logException(e, "Permission failure notification failed")
         }
     }
 

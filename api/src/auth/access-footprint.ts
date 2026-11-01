@@ -12,13 +12,14 @@ export type AccessChannel = (typeof ACCESS_CHANNELS)[number]
 const DEVICE_ROUTE =
   /\/gateway\/devices\/[^/]+\/(heartbeat|receive-sms|receiveSMS|sms-status)$/
 
-// The client header the official clients send, for example textbee-js/1.4.0.
-const ANDROID_CLIENT = 'textbee-android'
+// Current Layer SMS clients use layersms-* identifiers. Legacy TextBee
+// identifiers remain accepted so older SDK and device releases stay compatible.
+const ANDROID_CLIENTS = ['layersms-android', 'textbee-android']
 
 const CLIENT_FAMILIES: { label: string; match: RegExp }[] = [
-  { label: 'textbee-js', match: /^textbee-js\b/ },
-  { label: 'textbee-python', match: /^textbee-python\b/ },
-  { label: 'textbee-android', match: /^textbee-android\b/ },
+  { label: 'Layer SMS JS SDK', match: /^(?:layersms-js|textbee-js)\b/ },
+  { label: 'Layer SMS Python SDK', match: /^(?:layersms-python|textbee-python)\b/ },
+  { label: 'Layer SMS Android Gateway', match: /^(?:layersms-android|textbee-android)\b/ },
 ]
 
 const USER_AGENT_FAMILIES: { label: string; match: RegExp }[] = [
@@ -59,7 +60,7 @@ export function classifyChannel({
   sdkClient?: string
 }): AccessChannel {
   if (hasBearer) return 'web'
-  if (sdkClient?.toLowerCase().startsWith(ANDROID_CLIENT)) return 'device'
+  if (ANDROID_CLIENTS.some((client) => sdkClient?.toLowerCase().startsWith(client))) return 'device'
   if (DEVICE_ROUTE.test(requestPath(path))) return 'device'
   return 'api'
 }

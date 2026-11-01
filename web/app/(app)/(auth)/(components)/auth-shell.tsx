@@ -46,7 +46,7 @@ export default function AuthShell({
       <header className='flex h-14 items-center justify-between gap-4 px-4 sm:h-auto sm:px-8 sm:py-5'>
         <Link href={Routes.landingPage} className='flex items-center gap-2'>
           <Image
-            src='/images/logo.png'
+            src='/layer-sms-mark.svg'
             alt=''
             width={28}
             height={28}

@@ -217,7 +217,7 @@ fun SetupCompleteScreen(
                     )
                     Spacer(modifier = Modifier.height(2.dp))
                     Text(
-                        text = "SMS you receive on this phone will appear in your textbee dashboard and be accessible via API",
+                        text = "SMS you receive on this phone will appear in your Layer SMS Console and be accessible via API",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
@@ -258,7 +258,7 @@ fun SetupCompleteScreen(
         OutlinedButton(
             onClick = {
                 context.startActivity(
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://app.textbee.dev/dashboard"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://app.layersms.com/dashboard"))
                 )
             },
             modifier = Modifier
@@ -273,12 +273,12 @@ fun SetupCompleteScreen(
         TextButton(
             onClick = {
                 context.startActivity(
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://textbee.dev/docs"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.layersms.com"))
                 )
             }
         ) {
             Text(
-                text = "New to textbee? Read the quickstart guide",
+                text = "New to Layer SMS? Read the quickstart guide",
                 style = MaterialTheme.typography.bodySmall
             )
         }
@@ -286,12 +286,12 @@ fun SetupCompleteScreen(
         TextButton(
             onClick = {
                 context.startActivity(
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/textbee/textbee?ref=android-star"))
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Victor-Kipruto-Rop/LAYERSMS"))
                 )
             }
         ) {
             Text(
-                text = "textbee is open source. Star it on GitHub.",
+                text = "Layer SMS is open source. Star it on GitHub.",
                 style = MaterialTheme.typography.bodySmall
             )
         }

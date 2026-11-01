@@ -9,7 +9,7 @@ object RegistrationChecks {
     private val DEVICE_ID_PATTERN = Regex("^[0-9a-fA-F]{24}$")
 
     const val INVALID_DEVICE_ID =
-        "This Device ID is not valid. A Device ID has 24 characters, only 0-9 and a-f. Copy it from your textbee dashboard."
+        "This Device ID is not valid. A Device ID has 24 characters, only 0-9 and a-f. Copy it from your Layer SMS Console."
 
     const val PUSH_TOKEN_FAILED =
         "Could not connect to Google Play services. Check your internet connection and try again."
@@ -33,7 +33,7 @@ object RegistrationChecks {
         ConnectionResult.SERVICE_DISABLED ->
             "Google Play services is turned off on this phone. Turn it on in Settings > Apps, then try again."
         ConnectionResult.SERVICE_MISSING ->
-            "This phone does not have Google Play services. textbee needs it to get messages to send, so it cannot work on this phone."
+            "This phone does not have Google Play services. Layer SMS needs it to get messages to send, so it cannot work on this phone."
         ConnectionResult.SERVICE_INVALID ->
             "Google Play services on this phone is not genuine or is damaged. Reinstall or update it from the Play Store, then try again."
         else ->

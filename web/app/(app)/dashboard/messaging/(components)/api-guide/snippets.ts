@@ -4,7 +4,7 @@
 // is runnable after pasting one API key. The previous guide always printed
 // YOUR_DEVICE_ID, which meant nothing on the page could be run as-is.
 
-export const API_BASE_URL = 'https://api.textbee.dev/api/v1'
+export const API_BASE_URL = 'https://api.layersms.com/api/v1'
 
 export type LanguageId =
   | 'curl'
@@ -24,8 +24,8 @@ export const LANGUAGES: { id: LanguageId; label: string; highlight: string }[] =
     { id: 'python', label: 'Python', highlight: 'python' },
     { id: 'php', label: 'PHP', highlight: 'php' },
     { id: 'go', label: 'Go', highlight: 'go' },
-    { id: 'sdk', label: 'JS SDK', highlight: 'javascript' },
-    { id: 'python-sdk', label: 'Python SDK', highlight: 'python' },
+    { id: 'sdk', label: 'Legacy JS SDK', highlight: 'javascript' },
+    { id: 'python-sdk', label: 'Legacy Python SDK', highlight: 'python' },
   ]
 
 export type EndpointId =
@@ -61,7 +61,7 @@ const deviceIdField = (deviceId?: string) => ({
   pythonSdk: deviceId ? `\n    device_id='${deviceId}',` : '',
 })
 
-/** Package the SDK samples install, surfaced by the package manager picker. */
+/** Legacy upstream SDK package. This name remains for compatibility until a Layer SMS SDK is published. */
 export const SDK_PACKAGE = '@textbee/sdk'
 
 // Client setup shared by every SDK sample. The install command is deliberately
@@ -69,16 +69,16 @@ export const SDK_PACKAGE = '@textbee/sdk'
 // copy button hands back runnable code and nothing else.
 const SDK_SETUP = `import { Textbee } from '@textbee/sdk'
 
-const textbee = new Textbee({ apiKey: process.env.TEXTBEE_API_KEY })`
+const textbee = new Textbee({ apiKey: process.env.LAYERSMS_API_KEY })`
 
-/** Package the Python SDK samples install. */
+/** Legacy upstream Python SDK package. This name remains for compatibility until a Layer SMS package is published. */
 export const PYTHON_SDK_PACKAGE = 'textbee'
 
 const PYTHON_SDK_SETUP = `import os
 
 from textbee import Textbee
 
-textbee = Textbee(api_key=os.environ['TEXTBEE_API_KEY'])`
+textbee = Textbee(api_key=os.environ['LAYERSMS_API_KEY'])`
 
 export function buildEndpoints(deviceId?: string): Endpoint[] {
   const id = deviceId || PLACEHOLDER_DEVICE
@@ -93,23 +93,23 @@ export function buildEndpoints(deviceId?: string): Endpoint[] {
       path: '/gateway/send-sms',
       samples: {
         curl: `curl -X POST "${API_BASE_URL}/gateway/send-sms" \\
-  -H "x-api-key: $TEXTBEE_API_KEY" \\
+  -H "x-api-key: $LAYERSMS_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{${device.curl}
     "recipients": ["+14155550101"],
-    "message": "Hello from textbee"
+    "message": "Hello from Layer SMS"
   }'`,
         node: `const res = await fetch(
   '${API_BASE_URL}/gateway/send-sms',
   {
     method: 'POST',
     headers: {
-      'x-api-key': process.env.TEXTBEE_API_KEY,
+      'x-api-key': process.env.LAYERSMS_API_KEY,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({${device.node}
       recipients: ['+14155550101'],
-      message: 'Hello from textbee',
+      message: 'Hello from Layer SMS',
     }),
   }
 )
@@ -119,10 +119,10 @@ console.log(await res.json())`,
 
 res = requests.post(
     '${API_BASE_URL}/gateway/send-sms',
-    headers={'x-api-key': os.environ['TEXTBEE_API_KEY']},
+    headers={'x-api-key': os.environ['LAYERSMS_API_KEY']},
     json={${device.python}
         'recipients': ['+14155550101'],
-        'message': 'Hello from textbee',
+        'message': 'Hello from Layer SMS',
     },
 )
 
@@ -134,12 +134,12 @@ curl_setopt_array($ch, [
     CURLOPT_POST => true,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HTTPHEADER => [
-        'x-api-key: ' . getenv('TEXTBEE_API_KEY'),
+        'x-api-key: ' . getenv('LAYERSMS_API_KEY'),
         'Content-Type: application/json',
     ],
     CURLOPT_POSTFIELDS => json_encode([${device.php}
         'recipients' => ['+14155550101'],
-        'message' => 'Hello from textbee',
+        'message' => 'Hello from Layer SMS',
     ]),
 ]);
 
@@ -155,12 +155,12 @@ import (
 )
 
 func main() {
-	body := []byte(\`{${device.go}"recipients":["+14155550101"],"message":"Hello from textbee"}\`)
+	body := []byte(\`{${device.go}"recipients":["+14155550101"],"message":"Hello from Layer SMS"}\`)
 
 	req, _ := http.NewRequest("POST",
 		"${API_BASE_URL}/gateway/send-sms",
 		bytes.NewBuffer(body))
-	req.Header.Set("x-api-key", os.Getenv("TEXTBEE_API_KEY"))
+	req.Header.Set("x-api-key", os.Getenv("LAYERSMS_API_KEY"))
 	req.Header.Set("Content-Type", "application/json")
 
 	res, err := http.DefaultClient.Do(req)
@@ -176,7 +176,7 @@ func main() {
 
 const result = await textbee.sendSms({${device.sdk}
   recipients: ['+14155550101'],
-  message: 'Hello from textbee',
+  message: 'Hello from Layer SMS',
 })
 
 console.log(result)`,
@@ -184,7 +184,7 @@ console.log(result)`,
 
 result = textbee.send_sms(${device.pythonSdk}
     recipients=['+14155550101'],
-    message='Hello from textbee',
+    message='Hello from Layer SMS',
 )
 
 print(result)`,
@@ -205,7 +205,7 @@ print(result)`,
       path: '/gateway/send-bulk-sms',
       samples: {
         curl: `curl -X POST "${API_BASE_URL}/gateway/send-bulk-sms" \\
-  -H "x-api-key: $TEXTBEE_API_KEY" \\
+  -H "x-api-key: $LAYERSMS_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{${device.curl}
     "messages": [
@@ -218,7 +218,7 @@ print(result)`,
   {
     method: 'POST',
     headers: {
-      'x-api-key': process.env.TEXTBEE_API_KEY,
+      'x-api-key': process.env.LAYERSMS_API_KEY,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({${device.node}
@@ -235,7 +235,7 @@ console.log(await res.json())`,
 
 res = requests.post(
     '${API_BASE_URL}/gateway/send-bulk-sms',
-    headers={'x-api-key': os.environ['TEXTBEE_API_KEY']},
+    headers={'x-api-key': os.environ['LAYERSMS_API_KEY']},
     json={${device.python}
         'messages': [
             {'recipients': ['+14155550101'], 'message': 'Hi Alice'},
@@ -252,7 +252,7 @@ curl_setopt_array($ch, [
     CURLOPT_POST => true,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_HTTPHEADER => [
-        'x-api-key: ' . getenv('TEXTBEE_API_KEY'),
+        'x-api-key: ' . getenv('LAYERSMS_API_KEY'),
         'Content-Type: application/json',
     ],
     CURLOPT_POSTFIELDS => json_encode([${device.php}
@@ -283,7 +283,7 @@ func main() {
 	req, _ := http.NewRequest("POST",
 		"${API_BASE_URL}/gateway/send-bulk-sms",
 		bytes.NewBuffer(body))
-	req.Header.Set("x-api-key", os.Getenv("TEXTBEE_API_KEY"))
+	req.Header.Set("x-api-key", os.Getenv("LAYERSMS_API_KEY"))
 	req.Header.Set("Content-Type", "application/json")
 
 	res, _ := http.DefaultClient.Do(req)
@@ -300,7 +300,7 @@ const res = await fetch(
   {
     method: 'POST',
     headers: {
-      'x-api-key': process.env.TEXTBEE_API_KEY,
+      'x-api-key': process.env.LAYERSMS_API_KEY,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({${device.node}
@@ -319,7 +319,7 @@ import os, requests
 
 res = requests.post(
     '${API_BASE_URL}/gateway/send-bulk-sms',
-    headers={'x-api-key': os.environ['TEXTBEE_API_KEY']},
+    headers={'x-api-key': os.environ['LAYERSMS_API_KEY']},
     json={${device.python}
         'messages': [
             {'recipients': ['+14155550101'], 'message': 'Hi Alice'},
@@ -347,10 +347,10 @@ print(res.json())`,
       path: '/gateway/messages?direction=received',
       samples: {
         curl: `curl "${API_BASE_URL}/gateway/messages?direction=received" \\
-  -H "x-api-key: $TEXTBEE_API_KEY"`,
+  -H "x-api-key: $LAYERSMS_API_KEY"`,
         node: `const res = await fetch(
   '${API_BASE_URL}/gateway/messages?direction=received',
-  { headers: { 'x-api-key': process.env.TEXTBEE_API_KEY } }
+  { headers: { 'x-api-key': process.env.LAYERSMS_API_KEY } }
 )
 
 console.log(await res.json())`,
@@ -358,7 +358,7 @@ console.log(await res.json())`,
 
 res = requests.get(
     '${API_BASE_URL}/gateway/messages',
-    headers={'x-api-key': os.environ['TEXTBEE_API_KEY']},
+    headers={'x-api-key': os.environ['LAYERSMS_API_KEY']},
     params={'direction': 'received'},
 )
 
@@ -368,7 +368,7 @@ $ch = curl_init('${API_BASE_URL}/gateway/messages?direction=received');
 
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_HTTPHEADER => ['x-api-key: ' . getenv('TEXTBEE_API_KEY')],
+    CURLOPT_HTTPHEADER => ['x-api-key: ' . getenv('LAYERSMS_API_KEY')],
 ]);
 
 echo curl_exec($ch);`,
@@ -384,7 +384,7 @@ import (
 func main() {
 	req, _ := http.NewRequest("GET",
 		"${API_BASE_URL}/gateway/messages?direction=received", nil)
-	req.Header.Set("x-api-key", os.Getenv("TEXTBEE_API_KEY"))
+	req.Header.Set("x-api-key", os.Getenv("LAYERSMS_API_KEY"))
 
 	res, _ := http.DefaultClient.Do(req)
 	defer res.Body.Close()
@@ -442,17 +442,17 @@ for message in textbee.iterate_messages(direction='received', order='asc'):
       path: '/gateway/messages',
       samples: {
         curl: `curl "${API_BASE_URL}/gateway/messages?page=1&limit=20" \\
-  -H "x-api-key: $TEXTBEE_API_KEY"
+  -H "x-api-key: $LAYERSMS_API_KEY"
 
 # Which recipients of a batch failed, using the smsBatchId a send returns
 curl "${API_BASE_URL}/gateway/messages?smsBatchId=YOUR_BATCH_ID&status=failed" \\
-  -H "x-api-key: $TEXTBEE_API_KEY"`,
+  -H "x-api-key: $LAYERSMS_API_KEY"`,
         node: `const url = new URL('${API_BASE_URL}/gateway/messages')
 url.searchParams.set('page', '1')
 url.searchParams.set('limit', '20')
 
 const res = await fetch(url, {
-  headers: { 'x-api-key': process.env.TEXTBEE_API_KEY },
+  headers: { 'x-api-key': process.env.LAYERSMS_API_KEY },
 })
 
 console.log(await res.json())`,
@@ -460,7 +460,7 @@ console.log(await res.json())`,
 
 res = requests.get(
     '${API_BASE_URL}/gateway/messages',
-    headers={'x-api-key': os.environ['TEXTBEE_API_KEY']},
+    headers={'x-api-key': os.environ['LAYERSMS_API_KEY']},
     params={'page': 1, 'limit': 20},
 )
 
@@ -471,7 +471,7 @@ $ch = curl_init($url);
 
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_HTTPHEADER => ['x-api-key: ' . getenv('TEXTBEE_API_KEY')],
+    CURLOPT_HTTPHEADER => ['x-api-key: ' . getenv('LAYERSMS_API_KEY')],
 ]);
 
 echo curl_exec($ch);`,
@@ -487,7 +487,7 @@ import (
 func main() {
 	req, _ := http.NewRequest("GET",
 		"${API_BASE_URL}/gateway/messages?page=1&limit=20", nil)
-	req.Header.Set("x-api-key", os.Getenv("TEXTBEE_API_KEY"))
+	req.Header.Set("x-api-key", os.Getenv("LAYERSMS_API_KEY"))
 
 	res, _ := http.DefaultClient.Do(req)
 	defer res.Body.Close()
@@ -524,7 +524,7 @@ textbee.get_messages(sms_batch_id='YOUR_BATCH_ID', status='failed')`,
     {
       "_id": "665f1c2a9b1e4a0012ab34cd",
       "recipient": "+14155550101",
-      "message": "Hello from textbee",
+      "message": "Hello from Layer SMS",
       "direction": "sent",
       "status": "delivered",
       "requestedAt": "2026-07-18T09:12:00.000Z",

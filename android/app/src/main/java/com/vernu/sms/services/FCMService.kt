@@ -15,7 +15,7 @@ import com.google.gson.Gson
 import com.vernu.sms.ApiManager
 import com.vernu.sms.AppConstants
 import com.vernu.sms.R
-import com.vernu.sms.TextbeeUtils
+import com.vernu.sms.LayerSmsUtils
 import com.vernu.sms.activities.MainActivity
 import com.vernu.sms.dtos.RegisterDeviceInputDTO
 import com.vernu.sms.dtos.RegisterDeviceResponseDTO
@@ -53,7 +53,7 @@ class FCMService : FirebaseMessagingService() {
                 sendSMS(smsPayload, pushReceivedAt)
             }
         } catch (e: Exception) {
-            TextbeeUtils.logException(e, "Error processing FCM message")
+            LayerSmsUtils.logException(e, "Error processing FCM message")
         }
     }
 
@@ -161,7 +161,7 @@ class FCMService : FirebaseMessagingService() {
 
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, DEFAULT_NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setSmallIcon(R.drawable.layer_sms_notification_icon)
             .setContentTitle(title)
             .setContentText(messageBody)
             .setAutoCancel(true)

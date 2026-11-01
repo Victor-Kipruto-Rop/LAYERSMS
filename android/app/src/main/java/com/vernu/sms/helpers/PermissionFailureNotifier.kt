@@ -10,7 +10,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.vernu.sms.AppConstants
 import com.vernu.sms.R
-import com.vernu.sms.TextbeeUtils
+import com.vernu.sms.LayerSmsUtils
 
 // Tells the user on the phone when a send failed because the SMS permission is off
 object PermissionFailureNotifier {
@@ -41,10 +41,10 @@ object PermissionFailureNotifier {
             }
 
             // SMS allowed means the send targeted a SIM and the Phone permission is the one missing
-            val phoneOnly = TextbeeUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS)
+            val phoneOnly = LayerSmsUtils.isPermissionGranted(context, Manifest.permission.SEND_SMS)
             val builder = NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle(if (phoneOnly) "textbee cannot send from the chosen SIM" else "textbee cannot send SMS")
+                .setSmallIcon(R.drawable.layer_sms_notification_icon)
+                .setContentTitle(if (phoneOnly) "Layer SMS Gateway cannot send from the chosen SIM" else "Layer SMS Gateway cannot send SMS")
                 .setContentText(
                     if (phoneOnly) "Android has not allowed the Phone permission. Tap to fix it."
                     else "Android has not allowed the SMS permission. Tap to fix it."

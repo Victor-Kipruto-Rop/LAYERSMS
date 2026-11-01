@@ -183,7 +183,7 @@ export default function ApiGuide() {
           is global. Only the SDKs need installing; the REST samples do not. */}
       {language === 'sdk' && (
         <div className='space-y-1.5'>
-          <p className='text-sm font-medium'>Install the SDK</p>
+          <p className='text-sm font-medium'>Install legacy SDK</p>
           <PackageManagerTabs pkg={SDK_PACKAGE} />
         </div>
       )}
@@ -195,6 +195,15 @@ export default function ApiGuide() {
             language='bash'
           />
         </div>
+      )}
+
+      {(language === 'sdk' || language === 'python-sdk') && (
+        <Alert>
+          <AlertTitle>Legacy SDK compatibility</AlertTitle>
+          <AlertDescription>
+            These SDKs are still published under the original TextBee package names. They are shown for existing integrations and have not yet been republished as Layer SMS packages. For new integrations, use the REST API examples until official Layer SMS SDK packages are released.
+          </AlertDescription>
+        </Alert>
       )}
 
       {/* Endpoints */}
@@ -253,7 +262,7 @@ export default function ApiGuide() {
           </Button>
           <Button asChild variant='outline' size='sm'>
             <a
-              href='https://api.textbee.dev/'
+              href='https://api.layersms.com/'
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -268,7 +277,7 @@ export default function ApiGuide() {
               rel='noopener noreferrer'
             >
               <ExternalLink className='h-3.5 w-3.5' />
-              JavaScript SDK on npm
+              Legacy TextBee JavaScript SDK (npm)
             </a>
           </Button>
           <Button asChild variant='outline' size='sm'>
@@ -278,7 +287,7 @@ export default function ApiGuide() {
               rel='noopener noreferrer'
             >
               <ExternalLink className='h-3.5 w-3.5' />
-              Python SDK on PyPI
+              Legacy TextBee Python SDK (PyPI)
             </a>
           </Button>
         </div>

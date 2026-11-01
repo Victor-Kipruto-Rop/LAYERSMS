@@ -6,20 +6,25 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/dashboard',
-        permanent: true,
+        source: '/community',
+        destination: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/discussions',
+        permanent: false,
+      },
+      {
+        source: '/download',
+        destination: 'https://github.com/Victor-Kipruto-Rop/LAYERSMS/releases',
+        permanent: false,
       },
       {
         source: '/android',
-        destination: 'https://textbee.dev/download',
+        destination: 'https://layersms.com/download',
         permanent: false,
       },
-      // The invite itself lives behind textbee.dev/discord, so it can rotate
+      // The invite itself lives behind github.com/Victor-Kipruto-Rop/LAYERSMS/discussions, so it can rotate
       // in one place.
       {
         source: '/discord',
-        destination: 'https://textbee.dev/discord',
+        destination: 'https://layersms.com/community',
         permanent: false,
       },
     ]

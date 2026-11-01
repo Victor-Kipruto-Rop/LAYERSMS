@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.vernu.sms.ApiManagerKt
 import com.vernu.sms.AppConstants
-import com.vernu.sms.TextbeeUtils
+import com.vernu.sms.LayerSmsUtils
 import com.vernu.sms.dtos.RegisterDeviceInputDTO
 import com.vernu.sms.dtos.SimInfoDTO
 import com.vernu.sms.dtos.SubscriptionResponse
@@ -69,7 +69,7 @@ class DashboardViewModel(app: Application) : AndroidViewModel(app) {
         val lastHeartbeatMs = lastHeartbeatStr?.toLongOrNull()
 
         val sims = try {
-            TextbeeUtils.collectSimInfo(context)
+            LayerSmsUtils.collectSimInfo(context)
         } catch (e: Exception) {
             emptyList<SimInfoDTO>()
         }
@@ -91,7 +91,7 @@ class DashboardViewModel(app: Application) : AndroidViewModel(app) {
         // Restart sticky notification service on every launch if it should be running,
         // matching legacy MainActivity behaviour (service is killed by OS on modern Android).
         if (isEnabled) {
-            TextbeeUtils.startStickyNotificationService(context)
+            LayerSmsUtils.startStickyNotificationService(context)
             if (deviceId.isNotEmpty()) HeartbeatManager.scheduleHeartbeat(context)
         }
     }
@@ -108,7 +108,7 @@ class DashboardViewModel(app: Application) : AndroidViewModel(app) {
                     _state.update { it.copy(userProfile = response.body()?.data) }
                 }
             } catch (e: Exception) {
-                TextbeeUtils.logException(e, "User profile fetch failed")
+                LayerSmsUtils.logException(e, "User profile fetch failed")
             }
         }
     }
@@ -132,7 +132,7 @@ class DashboardViewModel(app: Application) : AndroidViewModel(app) {
                 }
             } catch (e: Exception) {
                 _state.update { it.copy(isSubscriptionLoading = false, subscriptionUnavailable = true) }
-                TextbeeUtils.logException(e, "Subscription fetch failed")
+                LayerSmsUtils.logException(e, "Subscription fetch failed")
             }
         }
     }
@@ -172,15 +172,15 @@ class DashboardViewModel(app: Application) : AndroidViewModel(app) {
                                     context, AppConstants.SHARED_PREFS_STICKY_NOTIFICATION_ENABLED_KEY, false
                                 )
                             ) {
-                                TextbeeUtils.startStickyNotificationService(context)
+                                LayerSmsUtils.startStickyNotificationService(context)
                             }
                             HeartbeatManager.scheduleHeartbeat(context)
                         } else {
-                            TextbeeUtils.stopStickyNotificationService(context)
+                            LayerSmsUtils.stopStickyNotificationService(context)
                             HeartbeatManager.cancelHeartbeat(context)
                         }
                     } catch (e: Exception) {
-                        TextbeeUtils.logException(e, "Gateway service toggle failed")
+                        LayerSmsUtils.logException(e, "Gateway service toggle failed")
                     }
                     _state.update {
                         it.copy(
@@ -199,7 +199,7 @@ class DashboardViewModel(app: Application) : AndroidViewModel(app) {
                     _state.update { it.copy(userMessage = message) }
                 }
             } catch (e: Exception) {
-                TextbeeUtils.logException(e, "Gateway toggle failed")
+                LayerSmsUtils.logException(e, "Gateway toggle failed")
                 _state.update { it.copy(userMessage = "Couldn't update the gateway. Please check your connection.") }
             } finally {
                 _state.update { it.copy(isTogglingGateway = false) }

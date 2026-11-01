@@ -113,7 +113,7 @@ fun DashboardScreen(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Image(
-                            painter = painterResource(id = R.drawable.ic_app_logo),
+                            painter = painterResource(id = R.drawable.layer_sms_app_logo),
                             contentDescription = null,
                             modifier = Modifier.size(28.dp)
                         )

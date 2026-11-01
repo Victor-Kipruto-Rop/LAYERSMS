@@ -1,107 +1,52 @@
 # Android Build Variants Setup (Dev vs Prod)
 
-This document explains how to use the dev and prod build variants for the SMS Gateway Android app.
+This document explains how to configure and build the Layer SMS Android gateway variants.
 
 ## Overview
 
-The app now supports two build variants:
-- **Dev**: For development and testing
-- **Prod**: For production releases
+- **Dev**: development and integration testing.
+- **Prod**: production service identity and API origin.
 
-## Key Differences
+## Key differences
 
 | Feature | Dev | Prod |
-|---------|-----|------|
-| Package Name | `com.vernu.sms.dev` | `com.vernu.sms` |
-| App Name | "SMS Gateway (Dev)" | "SMS Gateway" |
-| API Base URL | `https://api-dev.textbee.dev/api/v1/` | `https://api.textbee.dev/api/v1/` |
-| Firebase Config | `app/src/dev/google-services.json` | `app/src/prod/google-services.json` |
-| Version Suffix | `-dev` appended | No suffix |
+|---|---|---|
+| Application ID | `com.layersms.gateway.dev` | `com.layersms.gateway` |
+| App name | Layer SMS Dev | Layer SMS Gateway |
+| API base URL | `https://api-dev.layersms.com/api/v1/` | `https://api.layersms.com/api/v1/` |
+| Firebase config | `app/src/dev/google-services.json` | `app/src/prod/google-services.json` |
+| Version suffix | `-dev` | None |
 
-## Setup Instructions
+## Firebase configuration
 
-### 1. Firebase Configuration
+Create a Firebase Android app registration for each application ID. Download the matching `google-services.json` file and place it in the corresponding flavor directory:
 
-#### For Production:
-- The current `google-services.json` has been moved to `app/src/prod/google-services.json`
-- No changes needed if you're already using the production Firebase project
+- `android/app/src/dev/google-services.json`
+- `android/app/src/prod/google-services.json`
 
-#### For Development:
-- Create a new Firebase project for development
-- Download the `google-services.json` for your dev project
-- **Important**: Make sure the package name in Firebase is set to `com.vernu.sms.dev`
-- Replace the template file at `app/src/dev/google-services.json` with your actual dev configuration
+The checked-in sample files are templates only. They are not valid Firebase credentials and must not be used for a release build.
 
-### 2. API Configuration
+## Build commands
 
-The API base URLs are now configured via build variants:
-- **Dev**: `https://api-dev.textbee.dev/api/v1/`
-- **Prod**: `https://api.textbee.dev/api/v1/`
+Run from the `android/` directory:
 
-To change the dev API URL, edit the `buildConfigField` in `app/build.gradle`:
-```gradle
-dev {
-    buildConfigField "String", "API_BASE_URL", '"https://api-dev.textbee.dev/api/v1/"'
-}
-```
-
-## Building the App
-
-### Using Android Studio:
-1. Open the "Build Variants" panel (View → Tool Windows → Build Variants)
-2. Select the desired variant:
-   - `devDebug` - Development build for debugging
-   - `devRelease` - Development release build
-   - `prodDebug` - Production build for debugging
-   - `prodRelease` - Production release build
-
-### Using Command Line:
 ```bash
-# Build dev debug
 ./gradlew assembleDevDebug
-
-# Build dev release
-./gradlew assembleDevRelease
-
-# Build prod debug
 ./gradlew assembleProdDebug
-
-# Build prod release
+./gradlew assembleDevRelease
 ./gradlew assembleProdRelease
 ```
 
-## Installation
+Release builds must be signed with a dedicated Layer SMS release keystore. Never distribute a debug-signed APK as a production release. Keep keystore files and passwords out of Git and CI logs.
 
-Both variants can be installed simultaneously on the same device since they have different package names:
-- Dev app will show as "SMS Gateway (Dev)"
-- Prod app will show as "SMS Gateway"
+## Migration warning
 
-## Environment Detection
+The Layer SMS application IDs differ from the upstream TextBee IDs. Android treats Layer SMS as a separate app; it cannot update an existing installation that uses the old application ID. Users must install Layer SMS separately and register the device with the Layer SMS service.
 
-You can detect which environment the app is running in using:
-```java
-if (BuildConfig.ENVIRONMENT.equals("development")) {
-    // Development-specific code
-} else {
-    // Production code
-}
-```
+## Release checklist
 
-## Important Notes
-
-1. **Different Package Names**: Dev and prod apps are completely separate and can coexist
-2. **Separate Data**: Each variant maintains its own app data and preferences
-3. **Firebase Projects**: Use separate Firebase projects for dev and prod
-4. **API Endpoints**: Ensure your backend has corresponding dev/prod endpoints
-5. **Testing**: Always test the prod build before releasing
-
-## Troubleshooting
-
-### Build Errors:
-- Ensure both `google-services.json` files are properly configured
-- Check that package names match between Firebase console and app configuration
-- Verify API URLs are accessible
-
-### Firebase Issues:
-- Confirm the package name in Firebase matches the variant (`com.vernu.sms.dev` for dev)
-- Ensure SHA-1 fingerprints are added to Firebase if using authentication 
+- [ ] Verify Firebase configuration matches the selected flavor's application ID.
+- [ ] Verify the API origin points to the intended environment.
+- [ ] Verify release signing uses the protected release keystore.
+- [ ] Test install, registration, SMS permissions, background delivery and reboot recovery.
+- [ ] Test the APK on supported Android versions and dual-SIM devices.

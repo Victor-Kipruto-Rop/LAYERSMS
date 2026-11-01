@@ -1,4 +1,4 @@
-export const OPEN_SEARCH_EVENT = 'textbee:open-search'
+export const OPEN_SEARCH_EVENT = 'layersms:open-search'
 
 export const WEBHOOK_EVENTS = {
   MESSAGE_RECEIVED: 'MESSAGE_RECEIVED',

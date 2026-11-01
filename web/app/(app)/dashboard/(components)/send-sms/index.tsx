@@ -308,13 +308,13 @@ export default function SendSms() {
           <Alert variant='destructive' className='mt-5'>
             <ShieldAlert className='h-4 w-4' />
             <AlertTitle>
-              This message failed: the textbee app on your phone does not have
+              This message failed: the Layer SMS Gateway app on your phone does not have
               the SMS permission.
             </AlertTitle>
             <AlertDescription>
               <ol className='mt-2 list-decimal space-y-1 pl-4'>
                 <li>
-                  On the phone open Settings &gt; Apps &gt; textbee &gt;
+                  On the phone open Settings &gt; Apps &gt; Layer SMS Gateway &gt;
                   Permissions.
                 </li>
                 <li>

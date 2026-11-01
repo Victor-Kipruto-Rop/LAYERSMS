@@ -14,7 +14,7 @@ export function openSupportChat() {
   // @ts-ignore
   const widget = window.SupportHQWidget
   if (widget) widget.open()
-  else window.location.href = 'mailto:support@textbee.dev'
+  else window.location.href = 'https://support.layersms.com'
 }
 
 export default function SupportHQWidget() {
@@ -48,7 +48,7 @@ export default function SupportHQWidget() {
       // @ts-ignore
       window.SupportHQWidget?.init({
         projectId,
-        themeColor: process.env.NEXT_PUBLIC_SUPPORT_HQ_THEME_COLOR ?? '#2563eb',
+        themeColor: process.env.NEXT_PUBLIC_SUPPORT_HQ_THEME_COLOR ?? '#2ECC87',
         // Signed-out pages (login, register, checkout) have no session to read
         // the contact from, so the visitor is asked for it before chatting.
         ...(hasUser

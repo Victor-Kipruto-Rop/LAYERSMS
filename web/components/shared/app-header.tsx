@@ -127,17 +127,14 @@ export default function AppHeader({
       <div className='flex h-14 items-center gap-2 px-4'>
         <Link className='flex items-center space-x-2' href={Routes.landingPage}>
           <Image
-            src='/images/logo.png'
-            alt='textbee Logo'
-            width={24}
-            height={24}
-            className='h-6 w-6 rounded-full bg-white'
+            src='/layer-sms-mark.svg'
+            alt='Layer SMS'
+            width={28}
+            height={28}
+            className='h-7 w-7'
           />
           <span className='font-semibold tracking-tight'>
-            text<span className='text-primary'>bee</span>
-            <span className='align-center text-xs text-muted-foreground'>
-              .dev
-            </span>
+            <span className='text-foreground'>Layer</span>{' '}<span className='text-primary'>SMS</span>
           </span>
         </Link>
 
